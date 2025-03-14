@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/information-theory-and-coding/introduction-to-classical-information-theory/","created":"2025-02-04T08:27:56.742-07:00","updated":"2025-03-13T18:22:35.293-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/information-theory-and-coding/introduction-to-classical-information-theory/","created":"2025-02-04T08:27:56.742-07:00","updated":"2025-03-13T18:30:10.158-06:00"}
 ---
 
 > [!abstract] What is Information Theory?
@@ -12,7 +12,7 @@
 > 2. For a concrete and standard reference for the topic see ["Elements of Information Theory" by Cover and Thomas](https://books.google.com/books/about/Elements_of_Information_Theory.html?id=VWq5GG6ycxMC)
 > 3. [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon#) is considered the father of information theory or the age of information with his seminal paper ["A Mathematical Theory of Communication"](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf) largely considered the official founding of the field of information theory as it cemented the mathematical framework and language for the theory.
 
-> [!note] Disclaimer
+> [!warning] Disclaimer
 > At this time I largely focus on placing all of the relevant definitions and materials in one place. The intent is for the readability of this document to increase over time, but at the end of a day to provide one place for myself and the curious reader to outline different ideas while providing background materials for further exploration. This is to say, this is a *living document* subject to change, growth, and inaccuracies which I request are kindly given in the same respect as those with people.
 
 These notes largely follow that of Cover and Thomas as they are the standard reference for fundamental information theory concepts with my own personal context and interpretations. 
