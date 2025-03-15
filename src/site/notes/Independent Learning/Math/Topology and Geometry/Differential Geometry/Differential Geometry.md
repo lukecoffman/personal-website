@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/differential-geometry/differential-geometry/","created":"2025-01-15T18:11:38.281-07:00","updated":"2025-03-14T20:51:03.535-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/differential-geometry/differential-geometry/","created":"2025-01-15T18:11:38.281-07:00","updated":"2025-03-14T21:31:26.793-06:00"}
 ---
 
 # Overview
@@ -78,15 +78,15 @@ This is big! It shows that [[Independent Learning/Math/Topology and Geometry/Dif
 > [!proof]
 > 1. Follows from properties of $D_{\vec{v}}\lvert_{a}$.
 > 2. The map $\vec{v}_{a}\to D_{\vec{v}}\lvert_{a}$ is clearly linear.
->    Injectivity: Suppose $\vec{v}_{a}$ has the property that $D_{\vec{v}}\lvert_{a}$ is the zero [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation\|derivation]]. Write $\vec{v}=v^{i}\vec{e}_{i}$ in the standard basis, and let $f=x^{j}:\mathbb{R}^{n}\to \mathbb{R}$. Then
->    $$
-0 = D_{\vec{v}}\lvert_{a}(f)=v^{i} \frac{\partial }{\partial x^{i}} (x^{j}) = v^{j}
->  $$
->Therefore, $\vec{v}=0$.
->Surjectivity: Let $w\in T_{a}\mathbb{R}^{n}$ be arbitrary. For $i=1,\ldots,n$ let $v^{i}=w(x^{i})$, $\vec{v}=v^{i}\vec{e}_{i}$ we'll show that $w=D_{\vec{v}}\lvert_{a}$. Let $f\in C^{\infty}(\mathbb{R}^{n})$, we need to show that $w(f)=D_{\vec{v}}\lvert_{a}(f)$. By Taylor's theorem, we can write
->$$
-f(x)=f(a)+\sum_{i=1}^{n} \frac{\partial f}{\partial x^{i}}(a)(x^{i}-a^{i})+\sum_{i,j=1}^{n}(x^{i}-a^{i})(x^{j}-a^{j})g_{ij}(x)
->$$
+>	Injectivity: Suppose $\vec{v}_{a}$ has the property that $D_{\vec{v}}\lvert_{a}$ is the zero [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation\|derivation]]. Write $\vec{v}=v^{i}\vec{e}_{i}$ in the standard basis, and let $f=x^{j}:\mathbb{R}^{n}\to \mathbb{R}$. Then
+> $$
+> 0 = D_{\vec{v}}\lvert_{a}(f)=v^{i} \frac{\partial }{\partial x^{i}} (x^{j}) = v^{j}
+> $$
+>  Therefore, $\vec{v}=0$.
+>  Surjectivity: Let $w\in T_{a}\mathbb{R}^{n}$ be arbitrary. For $i=1,\ldots,n$ let $v^{i}=w(x^{i})$, $\vec{v}=v^{i}\vec{e}_{i}$ we'll show that $w=D_{\vec{v}}\lvert_{a}$. Let $f\in C^{\infty}(\mathbb{R}^{n})$, we need to show that $w(f)=D_{\vec{v}}\lvert_{a}(f)$. By Taylor's theorem, we can write
+> $$
+  f(x)=f(a)+\sum_{i=1}^{n} \frac{\partial f}{\partial x^{i}}(a)(x^{i}-a^{i})+\sum_{i,j=1}^{n}(x^{i}-a^{i})(x^{j}-a^{j})g_{ij}(x)
+> $$
 >where $g_{ij}$ are smooth functions. By the lemma above, $w\left( \sum_{i,j=1}^{n} (x^{i}-a^{i})(x^{j}-a^{j})g_{ij}(x) \right)=0$ since the grouped terms are $0$ at $x=a$. Therefore,
 >$$
 w(f)=\underbrace{w(f(a))}_{0}+\sum_{i=1}^{n} w\left(\frac{\partial f}{\partial x^{i}}(a)(x^{i}-a^{i}) \right) = v^{i} \frac{\partial f}{\partial x^{i}}(a)=D_{\vec{v}}\lvert_{a}(f).
