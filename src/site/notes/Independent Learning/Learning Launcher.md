@@ -1,8 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/learning-launcher/","tags":["gardenEntry"],"created":"2025-03-14T19:33:15.718-06:00","updated":"2025-03-14T21:05:48.644-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/learning-launcher/","tags":["gardenEntry"],"created":"2025-03-14T19:33:15.718-06:00","updated":"2025-03-14T21:15:26.457-06:00"}
 ---
 
-# Contents
+# Learning Launcher
 ## Mathematics
 ![[Math Canvas.canvas|Math Canvas]]
 
@@ -13,7 +13,7 @@
 |        [[Independent Learning/Math/Algebra/Linear Algebra#Overview\|Linear Algebra]]        | [[Independent Learning/Math/Analysis/Functional Analysis#Overview\|Functional Analysis]] |                                                           |
 | [[Independent Learning/Math/Algebra/Representation Theory#Overview\|Representation Theory]] |                                                       |                                                           |
 
-## Information and Coding Theory
+# Information and Coding Theory
 - [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory\|Introduction to Classical Information Theory]]
 - [[Independent Learning/Information and Coding Theory/Introduction to Coding Theory\|Introduction to Coding Theory]]
 
