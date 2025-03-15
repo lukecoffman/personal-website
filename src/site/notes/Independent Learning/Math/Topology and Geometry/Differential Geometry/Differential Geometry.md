@@ -1,0 +1,602 @@
+---
+{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/differential-geometry/differential-geometry/","created":"2025-01-15T18:11:38.281-07:00","updated":"2025-03-14T20:51:03.535-06:00"}
+---
+
+# Overview
+> [!question] What is differential geometry?
+> w
+
+> [!abstract] Summary of Topics Covered
+> Contents
+
+> [!info] Recommended readings and resources
+> Canonical text: ["Introduction to Smooth Manifolds" by Lee](https://link.springer.com/book/10.1007/978-1-4419-9982-5l)
+
+
+> [!warning] Recommended / Assumed Prerequisite Topics
+> This note assumes working knowledge of the following topics:
+> - Undergraduate multivariate [[Independent Learning/Math/Analysis/Real Analysis\|Real Analysis]]
+> - [[Independent Learning/Math/Algebra/Linear Algebra\|Linear Algebra]]
+> - [[Independent Learning/Math/Topology and Geometry/Topology\|Topology]]
+>
+> While the text is written to minimize the required background information, at some points, it will be unavoidable. Hopefully, by following a sufficient number of links one can fill these gaps and return to the topic at a later point.
+
+> [!danger] Disclaimer
+> Contents
+
+
+# Section 1
+## Week 5 Notes
+### Chapter 3: Tangent Vectors
+Derivatives are all about linear approximations, intuitively, the tangent space to a smooth manifold at a point $p\in M$ should be a "linear model" for $M$ near $p$.
+
+Let's start with the case of a manifold in $\mathbb{R}^{n}$. We are accustomed to thinking of points in $\mathbb{R}^{n}$ in two different ways:
+1. They are locations via coordinates $(x^{1},\ldots, x^{n})$
+2. They are vectors $\vec{v}=v^{i}\vec{e}_{i}$ with magnitude and direction.
+These are really two different things! A vector $\vec{v}$ is based at a point $x$, and the same expression for $v^{i}\vec{e}_{i}$ based at 2 different points represents 2 different objections.
+
+
+> [!def] Geometric Tangent Space
+> Given a **point** $\vec{a}\in \mathbb{R}^{n}$, the **geometric tangent space to $\mathbb{R}^{n}$ at $a$** is the set $\mathbb{R}^{n}_{a}=\{(a,\vec{v}):\vec{v}\in \mathbb{R}^{n}\}$ where we denote $(a,\vec{v})$ by $\vec{v}_{a}$. The set $\mathbb{R}^{n}_{a}$ is a [[Independent Learning/Math/Algebra/Linear Algebra#^def-vector-space\|vector space]] in the obvious way. For distinct points $a,b\in \mathbb{R}^{n}$, the spaces $\mathbb{R}^{n}_{a}$ and $\mathbb{R}^{n}_{b}$ are disjoint sets.
+
+So if $M\subseteq \mathbb{R}^{n}$ is a smooth submanifold, we could think of the tangent space to $M$ at $a\in M$ as a subspace of $\mathbb{R}^{n}_{a}$. But how could we make sense of this idea if $M$ is just an arbitrary smooth manifold and not a submanifold of some $\mathbb{R}^{n}$? Tools we have so far smooth coordinate chards, functions and maps.
+
+
+> [!NOTE] Observation
+> Geometric tangent vectors act on smooth functions by directional derivative, i.e., any $\vec{v}_{a}\in \mathbb{R}^{n}$ defines a map $D_{\vec{v}}\lvert_{a}:C^{\infty}(\mathbb{R}^{n})\to \mathbb{R}^{n}$ by $D_{\vec{v}}\lvert_{a}(f)=\frac{\partial }{\partial t}\lvert_{{t=0}}f(a+t\vec{v})$. This operator is linear over $\mathbb{R}$ and satisfies the product rule.
+
+If we write $\vec{v}=v^{i}\vec{e}_{i}$ in terms of the standard basis, then the chain rule says: $D_{\vec{v}}\lvert_{a}(f)=v^{i} \frac{\partial f}{\partial x^{i}} (a)$.
+
+
+> [!def] Derivations
+> Given $a\in \mathbb{R}^{n}$, a map $w:C^{\infty}(\mathbb{R}^{n}) \to \mathbb{R}$ is called a **derivation at $a$** if it is linear over $\mathbb{R}$ and satisfies the product rule (or Leibnitz rule).
+>
+{ #def-derivation}
+
+
+The set of all derivations at $a\in \mathbb{R}^{n}$ is denoted $T_{a}\mathbb{R}^{n}$ which is a [[Independent Learning/Math/Algebra/Linear Algebra#^def-vector-space\|vector space]] in the obvious way.
+
+
+> [!lemma] Properties of Derivations
+> Let $a\in \mathbb{R}^{n}$, $w\in T_{a}\mathbb{R}^{n}$, and $f,g\in C^{\infty}(\mathbb{R}^{n})$.
+> 1. If $f$ is a constant function, then $w(f)=0$.
+> 2. If $f(a)=g(a)=0$, then $w(fg)=0$.
+
+> [!proof]
+> 1. First suppose that $f=1$, then $w(f)=w(ff)=2w(f)$ therefore $w(f)=0$. For any other constant, just use that $w$ is a linear operator.
+> 2. Product rule.
+
+
+> [!prop] Derivations correspond to geometric tangent vectors
+> Let $a\in \mathbb{R}^{n}$,
+> 1. For each $\vec{v}_{a}\in \mathbb{R}^{n}_{a}$, the map $D_{\vec{v}}\lvert_{a}:C^{\infty}(\mathbb{R}^{n})\to \mathbb{R}$ is [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation\|derivation at $a$]].
+> 2. The map $\vec{v}_{a}\to D_{\vec{v}}\lvert_{a}$ is an isomorphism from $\mathbb{R}^{n}_{a}$ to $T_{a}\mathbb{R}^{n}$.
+
+This is big! It shows that [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation\|derivations]] at $a$ are in 1-1 correspondence with geometric tangent vectors at $a$, and in fact $\mathbb{R}^{n}_{a}$ and $T_{a}\mathbb{R}^{n}$ are isomorphic as [[Independent Learning/Math/Algebra/Linear Algebra#^def-vector-space\|vector spaces]].
+
+
+> [!proof]
+> 1. Follows from properties of $D_{\vec{v}}\lvert_{a}$.
+> 2. The map $\vec{v}_{a}\to D_{\vec{v}}\lvert_{a}$ is clearly linear.
+>    Injectivity: Suppose $\vec{v}_{a}$ has the property that $D_{\vec{v}}\lvert_{a}$ is the zero [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation\|derivation]]. Write $\vec{v}=v^{i}\vec{e}_{i}$ in the standard basis, and let $f=x^{j}:\mathbb{R}^{n}\to \mathbb{R}$. Then
+>    $$
+0 = D_{\vec{v}}\lvert_{a}(f)=v^{i} \frac{\partial }{\partial x^{i}} (x^{j}) = v^{j}
+>  $$
+>Therefore, $\vec{v}=0$.
+>Surjectivity: Let $w\in T_{a}\mathbb{R}^{n}$ be arbitrary. For $i=1,\ldots,n$ let $v^{i}=w(x^{i})$, $\vec{v}=v^{i}\vec{e}_{i}$ we'll show that $w=D_{\vec{v}}\lvert_{a}$. Let $f\in C^{\infty}(\mathbb{R}^{n})$, we need to show that $w(f)=D_{\vec{v}}\lvert_{a}(f)$. By Taylor's theorem, we can write
+>$$
+f(x)=f(a)+\sum_{i=1}^{n} \frac{\partial f}{\partial x^{i}}(a)(x^{i}-a^{i})+\sum_{i,j=1}^{n}(x^{i}-a^{i})(x^{j}-a^{j})g_{ij}(x)
+>$$
+>where $g_{ij}$ are smooth functions. By the lemma above, $w\left( \sum_{i,j=1}^{n} (x^{i}-a^{i})(x^{j}-a^{j})g_{ij}(x) \right)=0$ since the grouped terms are $0$ at $x=a$. Therefore,
+>$$
+w(f)=\underbrace{w(f(a))}_{0}+\sum_{i=1}^{n} w\left(\frac{\partial f}{\partial x^{i}}(a)(x^{i}-a^{i}) \right) = v^{i} \frac{\partial f}{\partial x^{i}}(a)=D_{\vec{v}}\lvert_{a}(f).
+>$$
+
+> [!corollary]
+> For any $a\in \mathbb{R}^{n}$, the $n$ derivatives $\frac{\partial }{\partial x^{i}}\lvert_{a}$ for $1\le i \le n$ defined by $\frac{\partial }{\partial x^{i}}\lvert_{a}(f) = \frac{\partial f}{\partial x^{i}}(a)$ form a basis for $T_{a}\mathbb{R}^{n}$, which therefore has dimension $n$.
+:
+#### Tangent Vectors on Manifolds
+
+> [!def] Derivation at a point on a Manifold
+> Let $M$ be a smooth manifold and $p\in M$. A [[Independent Learning/Math/Algebra/Linear Algebra#^def-linear-map\|linear map]] $\vec{v}:C^{\infty}(M)\to \mathbb{R}$ is called a **derivation at $p$** if $\vec{v}(fg)=f(p)\vec{v}(g)+g(p)\vec{v}(f)$ for all $f,g\in C^{\infty}(M)$.
+>
+{ #def-derivation-at-point-manifold}
+
+
+
+> [!def] Tangent space at a point
+> The set of all [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation-at-point-manifold\|derivations]] at $p\in M$ is called the **tangent space to $M$ at $p$** denoted $T_{p}M$. An element of $T_{p}M$ is called a **tengent vector to $M$ at$p$**.
+>
+{ #def-tangent-space}
+
+
+
+> [!lemma] Properties of Tangent Spaces
+> Let $M$ be a smooth manifold with $p\in M$, $\vec{v}\in T_{p}M$ and $f,g\in C^{\infty}(M)$.
+> 1. If $f$ is a constant function, then $\vec{v}(f)=0$.
+> 2. If $f(p)=g(p)$, then $\vec{v}(fg)=0$.
+
+#### The differential of a smooth map
+Recall that for a smooth map $F:\mathbb{R}^{m}\to \mathbb{R}^{n}$ the [[Independent Learning/Math/Analysis/Real Analysis#^def-total-derivative\|total derivative]] (represented by the [[Independent Learning/Math/Analysis/Real Analysis#^prop-total-derivative-matrix-is-Jacobian\|Jacobian Matrix]]) is a linear map that represents the "best linear approximation" to $F$ near the point $a$. What gets brushed aside is the fact that when we write $DF(a):\mathbb{R}^{m}\to \mathbb{R}^{n}$ is **really** a map $DF(a):T_{a}\mathbb{R}^{m}\to T_{F(a)}\mathbb{R}^{n}$. Since we have **canonical** isomorphisms $T_{a}\mathbb{R}^{m}\cong \mathbb{R}^{m}, T_{F(a)}\mathbb{R}^{n}\cong \mathbb{R}^{n}$ (via $(a,\vec{v})\to \vec{v}$) this distinction often gets glossed over. But for a smooth map $F:M\to N$ this distinction becomes important! Therefore, the "best linear approximation" to $F$ near $p\in M$ should be a linear map from $T_{p}M$ to $T_{F(p)}N$. But with no canonical bases for these spaces, we have no canonical identification with $\mathbb{R}^{m}$ or $\mathbb{R}^{n}$. So we need a more intrinsic definition.
+
+> [!def] Differential of a Smooth Map
+> Let $M,N$ be smooth manifolds and $F:M \to N$ be a smooth map. For each $p\in M$, define a map $dF_{p}:T_{p}M\to T_{F(p)}M$ as follows: given $\vec{v}\in T_{p}M$, let $dF_{p}(\vec{v})$ be the derivation on $N$ defined as follows, given $f\in C^{\infty}(N)$ we have $dF_{p}(\vec{v})(f):=\vec{v}(f\circ F)$.
+
+Check that $dF_{p}(\vec{v})$ is a derivation on $N$ at $F(p)$.
+1. Linearity: Let $f,g\in C^{\infty}(N)$, $a,b\in \mathbb{R}$. Then $dF_{p}(\vec{v})(af+bg)=\vec{v}((af+bg)\circ F)=a\vec{v}(f\circ F)+b\vec{v}(g\circ F)=adF_{p}(\vec{v})(f)+bdF_{p}(\vec{v})(g)$.
+2. Product rule: $dF_{p}(\vec{v})(fg)=\vec{v}((fg)\circ F)=\vec{v}((f\circ F)(g\circ F))=(f\circ F)(p)\vec{v}(g\circ F)+(g\circ F)(p)\vec{v}(f\circ F)=f(F(p))dF_{p}(\vec{v})(g)+g(F(p))dF_{p}(\vec{v}(f))$.
+
+
+> [!prop] Properties of Differentials
+> Let $M,N,P$ be smooth manifolds, $F:M\to N$, $G:N\to P$ both smooth and $p\in M$.
+> 1. $dF_{p}:T_{p}M\to T_{F(p)}N$ is a [[Independent Learning/Math/Algebra/Linear Algebra#^def-linear-map\|linear map]].
+> 2. $d(G\circ F)_{p}=dG_{F(p)}\circ DF_{p}:T_{p}M \to T_{G(F(p))}P$.
+> 3. $d(Id_{M})_{p}=Id_{T_{p}M}$.
+> 4. If $F$ is a diffeomorphism, then $d(F^{-1})_{F(p)}=(dF_{p})^{-1}:T_{F(p)}N\to T_{p}M$.
+
+> [!proof]
+> Exercise
+
+Local coordinate charts can be used to identify [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry\|tangent spaces]] $T_{p}M$ with Euclidian spaces. But there is a technical issue. [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-tangent-space\|Tangent vectors]] are defined by their actions on functions $f\in C^{\infty}(M)$, but coordinate charts are only defined on open subsets of $M$. Really this isn't a problem because tangent vectors act **locally**.
+
+
+> [!prop]
+> Let $M$ be a smooth manifold, $p\in M$, $\vec{v}\in T_{p}M$. If $f,g\in C^{\infty}(M)$ agree on some open neighborhood of $p$, then $\vec{v}(f)=\vec{v}(g)$.
+
+> [!proof]
+> Let $h=f-g$, so $h\in C^{\infty}(M)$ and $h \equiv 0$ on some open neighborhood of $p$. Let $\psi \in C^{\infty}(M)$ be a smooth bump function supported in $M \setminus \{p\}$ and $\equiv 1$ on $\mathrm{supp}~h$. Then, since $\psi=1$ whenever $h\neq0$, we have $\psi h = h$ whenever $h \neq 0$ and since $\psi(p)=h(p)=0$, the lemma implies that $\vec{v}(h)=\vec{v}(\psi h)=0$ therefore $\vec{v}(f)=\vec{g}$.
+
+This means we can identify $T_{p}M$ with the tangent space at $p$ to any open submanifold $U\subseteq M$ with $p\in U$. Specifically,
+
+> [!prop]
+> Let $M$ be a smooth manifold, $U\subseteq M$ open, and let $\iota:U\to M$ be the inclusion map. Then for any $p\in M$, $d\iota_{p}:T_{p}U \to T_{p}M$ is an isomorphism.
+
+## Week 6: Notes
+
+### Coordinate Computations
+Let $M$ be a smooth manifold and $(U,\varphi)$ a smooth chart. $\varphi$ is a diffeomorphism from $U$ to an open subset $\hat{U}\subseteq \mathbb{R}^{n}$. So for any $p\in U$, the differential $d\varphi_{p}:T_{p}M\to T_{\varphi(p)}\mathbb{R}^{n}$ is an isomorphism. The [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-derivation\|derivations]] $\frac{\partial }{\partial x^{1}} \lvert_{\hat{p}},\ldots, \frac{\partial }{\partial x^{n}}\lvert_{\hat{p}}$ form a (standard) basis for $T_{\hat{p}}\mathbb{R}^{n}$, so their preimages under $d\varphi_{p}$ form a basis for $T_{p}M$. They are denoted by $\frac{\partial }{\partial x^{1}}\lvert_{p},\ldots, \frac{\partial }{\partial x^{n}}\lvert_{p}$. For any $f\in C^{\infty}(M)$, $\frac{\partial }{\partial x^{i}}\lvert_{p}(f)=d\varphi_{p} \left( \frac{\partial }{\partial x^{i}}\lvert_{p} \right)(f\circ \varphi^{-1})= \frac{\partial }{\partial x^{i}}\lvert_{\hat{p}} (f\circ \varphi^{-1})=\frac{\partial \hat{f}}{\partial x^{i}}\lvert_{\hat{p}}$. The vectors $\frac{\partial }{\partial x^{i}}\lvert_{p}\in T_{p}M$ are the *coordinate vectors at $p$ associated to the chart $(U,\varphi)$*. Since they form a basis for $T_{p}M$, any vector $\vec{v}\in T_{p}M$ can be written uniquely as $\vec{v}=v^{i} \frac{\partial }{\partial x^{i}}$ for some $v^{i}\in \mathbb{R}$ called the *components* of $\vec{v}$ with respect to the coordinate basis. If $\vec{v}\in T_{p}M$ is known, we can compute its components from its action on the coordinate functions $x^{i}$:
+$$
+\vec{v}(x^{i})=v^{j} \frac{\partial }{\partial x^{j}}(x^{i})=v^{j} \delta_{j}^{i}=v^{i}.
+$$
+### The Differential in Coordinates
+Start with the easy case: Let $U\subseteq \mathbb{R}^{n}$ and $V\subseteq \mathbb{R}^{m}$ and $F:U\to V$. For $p\in U$, how do we write the linear map $dF_{p}:T_{p}\mathbb{R}^{n}\to T_{F(p)}\mathbb{R}^{m}$ with respect to the standard coordinate bases? Let $(x^{i})$ be the standard coordinates on $U$ and $(y^{i})$ be the standard coordinates on $V$. Let $p\in U$ and consider the standard basis $\frac{\partial }{\partial x^{i}}\vert_{p}$. To find $dF_{p}\left( \frac{\partial }{\partial x^{i}}\lvert_{p} \right)$ let $f\in C^{\infty}(V)$ then
+$$
+dF_{p} \left(\frac{\partial }{\partial x^{i}}\lvert_{p} \right)(f)=\frac{\partial }{\partial x^{i}}\lvert_{p} \left( f\circ F \right) = \frac{\partial f}{\partial y^{j}}(F(p)) \frac{\partial F^{j}}{\partial x^{i}}(p) = \frac{\partial F^{j}}{\partial x^{i}}(p) \frac{\partial }{\partial y^{j}}\Bigg\lvert_{F(p)}(f)
+$$
+So the matrix of $dF_{p}$ with respect to the coordinate bases is the Jacobian matrix. So in this case, $dF_{p}:T_{p}\mathbb{R}^{n}\to T_{F(p)}\mathbb{R}^{m}$ corresponds exactly to the [[Independent Learning/Math/Analysis/Real Analysis#^def-total-derivative\|total derivative]] via the canonical isomorphisms $T_{p}\mathbb{R}^{n}\cong \mathbb{R}^{n}$ and $T_{F(p)}\mathbb{R}^{m}\cong \mathbb{R}^{m}$.
+
+Now let $F:M\to N$ be a smooth map between smooth manifolds. Let $p\in M$ and choose charts $(U,\varphi)$ on $M$ and $(V,\psi)$ on $N$ with $p\in U$, $F(p)\in V$. Let $\hat{p}=\varphi(p)\in \mathbb{R}^{n}$, $\hat{F}:\psi \circ F \circ \varphi^{-1}$. From the previous case, we know that $d \hat{F}_{\hat{p}}:T_{\hat{p}}\mathbb{R}^{n}\to T_{\hat{F}(\hat{p})}\mathbb{R}^{n}$ is represented by the Jacobian matrix of $\hat{F}$ with respect to the standard basis $\frac{\partial }{\partial x^{i}}\lvert_{\hat{p}}$ for $T_{\hat{p}}\mathbb{R}^{m}$ and $\frac{\partial }{\partial y^{i}}\lvert_{{\hat{F}(\hat{p})}}$ for $T_{\hat{F}(\hat{p})}\mathbb{R}^{m}$. Since $F \circ \varphi^{-1}=\psi^{-1}\circ \hat{F}$ we have 
+$$
+dF_{p} \left( \frac{\partial }{\partial x^{i}}\Bigg\lvert_{p} \right)=dF_{p} \left( d(\varphi^{-1})_{\hat{p}} \left( \frac{\partial  }{\partial x^{i}} \right)\Bigg\lvert_{\hat{p}} \right) = d(\psi^{-1})_{\hat{F}(\hat{p})}\left( d\hat{F}_{\hat{p}} \left( \frac{\partial }{\partial x^{i}} \Bigg\lvert_{\hat{p}} \right) \right) = d(\psi^{-1})_{\hat{F}(\hat{p})} \left( \frac{\partial \hat{F}^{j}}{\partial x^{i}}(p) \frac{\partial }{\partial y^{j}} \Bigg\lvert_{\hat{F}(\hat{p})} \right) = \frac{\partial \hat{F}^{j}}{\partial x^{i}}(p) d(\psi^{-1})_{\hat{F}(\hat{p})} \left( \frac{\partial }{\partial y^{j}} \Bigg\lvert_{\hat{F}(\hat{p})} \right)= \frac{\partial \hat{F}^{j}}{\partial x^{i}}(p) \frac{\partial }{\partial y^{j}}\Bigg\lvert_{F(p)}
+$$
+So, in coordinate bases for $T_{p}M$, $T_{F(p)}N$ the map $dF_{p}$ is represented by the Jacobian matrix of the coordinate representation $\hat{F}$ for $F$.
+
+
+> [!info] Terminology / Notation
+> The differential $dF_{p}$ is sometimes called the **tangent map**, the **total derivative**, or simple the **derivative** of $F$ at $p$. It's also called the **pushforward** of $F$, because it "pushes" tangent vectors forward from $M$ to $N$. Notations include: $dF_{p}, F'(p), DF_{p}, F_{\ast}, T_{p}F$.
+
+### Changes of Coordinates
+Now, what happens to all of the above when we **change** coordinates? Let $(U,\varphi)$, $(V,\psi)$ be 2 smooth charts on $M$ and $p\in U\cap V$. It's traditional to write the transition function $\psi \circ \varphi^{-1}:\varphi(U\cap V)\to \psi(U\cap V)$ as $\psi \circ \varphi^{-1}(x)=(\tilde{x}^{1}(x),\ldots,\tilde{x}^{n}(x))$. The differential $d(\psi \circ \varphi^{-1})$ acts on the tangent vector $\frac{\partial }{\partial x^{i}}\lvert_{\varphi(p)}$ by $d(\psi \circ \varphi^{-1})_{\varphi(p)} \left( \frac{\partial }{\partial x^{i}} \Big\lvert_{\varphi(p)} \right)= \frac{\partial \tilde{x}^{j}}{\partial x^{i}}(\varphi(p)) \frac{\partial }{\partial \tilde{x}^{j}}\lvert_{\psi(p)}\in T_{\psi(p)}\mathbb{R}^{n}$. From the definition of the coordinate vectors upstairs in $T_{p}M$ we have that
+$$
+\frac{\partial }{\partial x^{i}}\lvert_{p}=(d\varphi^{-1})_{\varphi(p)} \left( \frac{\partial }{\partial x^{i}}\lvert_{\varphi(p)} \right)=d(\psi^{-1})_{\psi(p)}\circ d(\psi \circ \varphi^{-1})_{\varphi(p)} \left(\frac{\partial }{\partial x^{i}}\lvert_{\varphi(p)} \right)=d(\psi^{-1})_{\psi(p)} \left( \frac{\partial \tilde{x}^{j}}{\partial x^{i}}(\varphi(p)) \frac{\partial }{\partial \tilde{x}^{j}}\lvert_{\psi(p)} \right)= \frac{\partial \tilde{x}^{j}}{\partial x^{i}}(\varphi(p)) \frac{\partial }{\partial \tilde{x}^{j}}\lvert_{p}
+$$
+which is just the chain rule for partial derivatives. This also lets us see how the components of a tangent vector transform under a change of variables.
+$$
+\begin{align}
+\vec{v}_{p} = v^{i} \frac{\partial }{\partial x^{i}}\Bigg\lvert_{p}=\tilde{v}^{j} \frac{\partial }{\partial \tilde{x}^{j}}\Bigg\lvert_{p} \\
+\implies v^{i} \left( \frac{\partial \tilde{x}^{j}}{\partial x^{i}}(\varphi(p)) \right) \frac{\partial }{\partial \tilde{x}^{j}}\Bigg\lvert_{p}=\tilde{v}^{j} \frac{\partial }{\partial \tilde{x}^{j}}\Bigg\lvert_{p} \\
+\implies \tilde{v}^{j} = \frac{\partial \tilde{x}^{j}}{\partial x^{i}}(\varphi(p))v^{i}
+\end{align}
+$$
+Thus, to do a change of basis we act the Jacobian from the transition function evaluated at $\varphi(p)$ to our old basis.
+
+
+> [!example] Change of Basis between cartesian coordinates and polar coordinates
+> Let $U\subseteq \mathbb{R}^{2}\setminus \{0\}$ be simply connected. The transition map between cartesian coordinates $(x,y)$ and polar coordinates $(r,\theta)$ is $(x,y)=(r\cos\theta,r\sin \theta)$. Here $x^{1}=r,x^{2}=\theta$ and $\tilde{x}^{1}=x,\tilde{x}^{2}=y$. For $p\in U$ it has polar coordinates $(r,\theta)=(\sqrt{2},\pi / 4)$. Let $\vec{v}\in T_{p}\mathbb{R}^{2}$ have polar coordinate representation $\vec{v}= \frac{\partial }{\partial r}\lvert_{p} + 2 \frac{\partial }{\partial \theta}\lvert_{p}$. Find the Cartesian coordinate representation for $p,\vec{v}$.
+>$$
+\begin{align}
+p: (x,y)=(\sqrt{2} \cos(\pi / 4),\sqrt{2} \sin( \pi / 4))=(1,1). \\
+\frac{\partial }{\partial r}\Bigg\lvert_{p} = \cos( \pi / 4) \frac{\partial }{\partial x} + \sin(\pi / 4) \frac{\partial }{\partial y} = \frac{\sqrt{2}}{2} \left( \frac{\partial }{\partial x} + \frac{\partial }{\partial y} \right) \\
+\frac{\partial }{\partial \theta}\Bigg\lvert_{p}= -\sqrt{2} \sin( \pi /4) \frac{\partial }{\partial x}\Bigg\lvert_{p} + \sqrt{2} \cos(\pi / 4) \frac{\partial }{\partial y}\Bigg\lvert_{p} = - \frac{\partial }{\partial y}\Bigg\lvert_{p} + \frac{\partial }{\partial y}\Bigg\lvert_{p} \\
+\implies \vec{v} = \left( \frac{1-2\sqrt{2}}{\sqrt{2}} \right) \frac{\partial }{\partial x}\Bigg\lvert_{p} + \left( \frac{1+2\sqrt{2}}{\sqrt{2}} \right) \frac{\partial }{\partial y}\Bigg\lvert_{p}
+\end{align}
+>$$ 
+> 
+
+### The Tangent Bundle
+
+> [!def] Tangent Bundle
+> Let $M$ be a smooth manifold. The **tangent bundle** $TM$ of $M$ is the **disjoint** union of all the tangent spaces to all points of $M$.
+> $$
+TM = \bigsqcup_{p\in M} T_{p}M
+>$$
+>^def-tangent-bundle
+
+Elements may be written as $(p,\vec{v}), \vec{v}_{p}, \vec{v}\in T_{p}M$, etc. The map $\pi: TM \to M$ defined by $\pi(p,\vec{v})=p$ is the **tangent bundle projection map** or **base point map**. For $p\in M$, the set $\pi^{-1}(p)=T_{p}M$ is the **fiber** of $TM$ at $p\in M$. 
+
+
+> [!prop] $TM$ as a smooth manifold
+> The set $TM$ can be given the structure of a smooth manifold of dimension $2n$ (where $\dim M=n$) in a natural way such that $\pi: TM \to M$ becomes a smooth map.
+
+> [!proof]
+> Let $(U,\varphi)$ be a chart on $M$. Let $\pi^{-1}(U)\subseteq TM$ be the subset of all tangent vectors to $M$ to all points $p\in U$. Define $\tilde{\varphi}:\pi^{-1}(U)\to \mathbb{R}^{2n}$ as follows: for $p\in U$ and $\vec{v}=v^{i} \frac{\partial }{\partial x^{i}}\lvert_{p}\in T_{p}U$ define
+> $$
+\tilde{\varphi}(\vec{v}_{p})=(x^{1}(p),\ldots, x^{n}(p),v^{1},\ldots,v^{n}).
+>$$
+>$\tilde{\varphi}$ is a bijection from $\pi^{-1}(U)$ to $\varphi(U)\times \mathbb{R}^{n}$ with inverse map $\tilde{\varphi}^{-1}(x^{1},\ldots,x^{n},v^{1},\ldots,v^{n})= v^{i} \frac{\partial }{\partial x^{i}}\lvert_{\varphi^{-1}(x)}\in T_{\varphi^{-1}(x)}M$
+
+## Week 7 Notes
+FILL IN WEEK 7 Notes
+
+## Week 8 Notes
+
+
+> [!thm] Constant Rank Level Set Theorem
+> Let $\Phi:M^{m}\to N^{n}$ be a smooth map of constant rank $r$. Then every level set of $\Phi$ is a properly embedded, codimension $r$, submanifold of $M$.
+
+
+> [!cor] Submersion Level Set Theorem
+> If $\Phi:M\to N$ is a smooth submersion, then every level set of $\Phi$ is a properly embedded submanifold of $M$ of dimension $\dim M-\dim N$.
+>
+{ #cor-submersion-level-set-theorem}
+
+
+
+So, what about maps of non-constant rank?
+
+
+> [!def] Regular and Critical Points of a Smooth Map
+> Let $\Phi:M\to N$ be a smooth map. A point $p\in M$ is called a **regular point** of $\Phi$ if $d\Phi_{p}:T_{p}M\to T_{\Phi(p)}N$ is surjective, and a **critical point** otherwise. (So every point in $M$ is regular iff $\Phi$ is a submersion).
+> 
+> From Ch. 4, we know that the subset of $M$ consisting of regular points of $\Phi$ is open in $M$. 
+> A point $c\in N$ is a **regular value** of $\Phi$ if every point in $\Phi^{-1}(c)$ is a regular point of $\Phi$. Similarly, $c\in N$ is a **critical value** of $\Phi$ if there exists a critical point of $\Phi$ in $\Phi^{-1}(c)$. A level set $\Phi^{-1}(c)$ is a **regular level set** if $c$ is a regular value.
+>
+{ #def-regular-and-critical-points-of-a-smooth-map}
+
+
+
+> [!thm] Regular Level Set Theorem
+> Every [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-regular-and-critical-points-of-a-smooth-map\|regular level set]] of a smooth map between smooth manifolds is a properly embedded submanifold whose codimension is equal to the dimension of the codomain. (a.k.a Implicit Function Theorem for smooth maps).
+>
+{ #thm-regular-level-set}
+
+
+> [!proof]
+> Let $\Phi:M\to N$ be smooth and $c\in N$ a regular value. The set of regular points $U\subseteq M$ is open in $M$, and $\Phi^{-1}(c)\subseteq U$. Since $\Phi\lvert_{U}:U\to N$ is a smooth submersion, the [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^cor-submersion-level-set-theorem\|submersion level set theorem]] implies that $\Phi^{-1}(c)$ is an embedded submanifold of $U$. Since the composition of smooth embeddings $\Phi^{-1}(c)\to U\to M$ is a smooth embedding $\Phi^{-1}(c)$ is an embedded submanifold of $M$, and its a closed submanifold by continuity.
+
+
+> [!example] Spheres
+> Define $f:\mathbb{R}^{n+1}\to \mathbb{R}$ by $f(x^{1},\ldots,x^{n+1})=(x^{1})^{2}+\cdots+(x^{n+1})^{2}$. Critical points:
+> $$
+> df_{\vec{x}}=[2x^{1},\ldots,2x^{n+1}]
+> $$
+> Only critical points is $\vec{x}=0$, so the only critical value is $f(0)=0$. So any $a^{2}>0$ is a regular value, so $f^{-1}(a^{2})=\{\text{sphere of radius a}\}$ is a smooth embedded submanifold of $\mathbb{R}^{n+1}$.
+
+Not every smooth embedded submanifold is a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-regular-and-critical-points-of-a-smooth-map\|regular level set]] of some smooth map, but *locally* every embedded smooth submanifold has this form.
+
+### Immersed Submanifolds
+
+> [!def] Immersed Submanifolds
+> Let $M$ be a smooth manifold. An **immersed submanifold** of $M$ is a subset $S\subset M$ endowed with a topology (not necessarily the subspace topology) with respect to which is a topological manifold, and a smooth structure with respect to which the inclusion map $\iota:S \hookrightarrow M$ is an immersion.
+>
+{ #def-immersed-submanifolds}
+
+
+Every embedded submanifold is also an immersed submanifold. By convention, "smooth submanifold" means an immersed submanifold. Some authors defined an immersed submanifold to be the image of *any* immersion, injective or not. Our definition forbids images of non-injective immersions, but it *does* include things like the dense curve of irrational slope on $\mathbb{S}^{1}\times \mathbb{S}^{1}$.
+
+> [!prop] :
+> Suppose $M,N$ are smooth manifolds and $F:N\to M$ is an injective smooth immersion. Let $S=F(N)\subset M$. Then $S$ has a unique topology and smooth structure such that it is a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-immersed-submanifolds\|smooth submanifold]] of $M$ and such that $F:N\to S$ is a diffeomorphism onto its image.
+
+> [!proof]
+> We give $S$ at topology by declaring a subset $U\subseteq S$ to be open iff $F^{-1}(U)$ is open in $N$, and a smooth structure by defining its charts to be $\{(F(U),\varphi\circ F^{-1}):(U,\varphi)\text{ is a chart on N}\}$. This is clearly the unique topology and smooth structure on $S$ that makes $F:N\to S$ a diffeomorphism. Moreover, the inclusion map $\iota:S\hookrightarrow M$ can be written as a composition $S\to N\to M$ via $F\circ F^{-1}$. Since $F^{-1}$ is a diffeo and $F$ is a smooth immersion the composition is also a smooth immersion.
+
+
+> [!prop] :
+> Let $M$ be a smooth manifold, $S\subset M$ an [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-immersed-submanifolds\|immersed submanifold]]. If any of the following holds, then $S$ is embedded:
+> 1. $S$ has codimension $0$ in $M$.
+> 2. If the inclusion map, $\iota:S\hookrightarrow M$ is proper (a.k.a. the inverse image of compact sets are compact)
+> 3. $S$ is compact.
+
+An [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-immersed-submanifolds\|immersed submanifold]] *locally* has the structure of an embedded submanifold.
+
+
+> [!prop] :
+> If $M$ is a smooth manifold, $S\subseteq M$ is an immersed submanifold, then for all $p\in M$ there exists a neighborhood $U$ of $p$ in $S$ that is an embedded submanifold of $M$.
+
+> [!proof]
+> We saw in chapter 4 that each $p\in S$ has a neighborhood $U\subseteq S$ such that the inclusion map $\iota:U \hookrightarrow M$ is an embedding.
+
+Immersed submanifolds are often studied using **parameterizations**.
+
+
+> [!def] Local Parameterization
+> Let $S\subset M$ be an immersed $k$-dimensional submanifold. A **local parameterization** of $S$ is a continuous map $X:U\to M$ whose domain is an open subset $U\subseteq \mathbb{R}^{k}$, whose image is an open subset of $S$, and which, when thought of as a map into $S$, is a homeomorphism onto its image (i.e. its needs to be injective). $X$ is a **smooth local parameterization** if it's a diffeomorphism onto $X(U)\subseteq S$
+>
+{ #def-local-parameterization}
+
+
+
+> [!prop] :
+> Let $M$ be a smooth manifold, $S\subset M$ an immersed $k$-dimensional submanifold, $\iota:S \hookrightarrow M$ the inclusion map, $U\subseteq \mathbb{R}^{k}$ open. A map $X:U\to M$ is a smooth local parameterization of $S$ if and only if there exists a smooth local coordinate chart $(V,\varphi)$ on $S$ such that $X=\iota\circ \varphi^{-1}$. In particular, every point of $S$ is in the image of some local parameterization.
+
+### Restricting Maps to Submanifolds
+Q: Given a smooth map $F:M\to N$ does it remain smooth if the domain or codomain is restricted to a smooth submanifold?
+
+
+> [!prop] :
+> If $F:M\to N$ is a smooth map between smooth manifolds and $S\subseteq M$ is an immersed or embedded submanifold, then $F\lvert_{S}:S\to N$ is smooth.
+
+
+> [!proof]
+> By definition $\iota:S\hookrightarrow M$ is smooth so $F\lvert_{S}=F\circ \iota:S\to N$ is smooth.
+
+Restricting the codomain is slightly more complicated.
+
+
+> [!prop]
+> Let $M,N$ be smooth manifolds, $S\subseteq N$ an immersed submanifold and $F:M\to N$ smooth such that $F(M)\subseteq S$. If $F$ is continuous as a map into $S$, then $F:M\to S$ is smooth.
+
+> [!proof] 
+> Book / Exercise
+
+
+> [!example] How continuity can fail, the "Figure 8 curve"
+>  See the book
+
+
+> [!cor] Embedded Case
+> Let $M,N$ be smooth manifolds, $S\subseteq N$ an embedded submanifold. Then every smooth map $F:M\to N$ with $F(M)\subseteq S$ is also a smooth map from $M$ to $S$.
+
+> [!proof]
+> Since $S\subseteq M$ has the subspace topology, a continuous map $F:M\to N$ with $F(M)\subseteq S$ is automatically continuous as a map into $S$.
+
+### Extending Functions from Submanifolds
+Let $M$ be a smooth manifold, $S\subset M$ a smooth submanifold. There are 2 ways we might define a "smooth function" $f:S\to \mathbb{R}$.
+1. A function $f:S\to \mathbb{R}$ that's smooth as a function on the smooth manifold $S$ (i.e. for any chart $(U,\varphi)$ on $S$, $f\circ \varphi^{-1}$ is smooth)
+2. As a function $f:S\to \mathbb{R}$ that is smooth on $S$ as a *subset* $S\subseteq M$, i.e. $f$ must admit a smooth extension to a smooth neighborhood in $M$ of each point in $S$.
+**Convention:** Notation $f\in C^{\infty}(S)$ means option 1.
+
+
+> [!lemma] Extension Lemma for Smooth Functions on Submanifolds
+> Let $M$ be a smooth manifold, $S\subseteq M$ a smooth submanifold, and $f\in C^{\infty}(S)$.
+> 1. If $S$ is embedded, then there exists a neighborhood $U$ of $S$ in $M$ and a smooth function $\tilde{f}\in C^{\infty}(U)$ such that $\tilde{f}\lvert_{S}=f$.
+> 2. If $S$ is properly embedded, then the neighborhood $U$ can be taken to be all of $M$.
+
+### Tangent Spaces to Submanifolds
+If $S \subseteq M$ is a smooth manifold and $p\in S$, we'd like to think of $T_{p}S$ as a subspace of $T_{p}M$. We can make this precise as follow: Since the inclusion map $\iota:S \hookrightarrow M$ is an immersion, we have that $d \iota_{p}:T_{p}S \to T_{p}M$ is injective. We generally identify $T_{p}S$ with its image $d\iota_{p}(T_{p}S)\subseteq T_{p}M$.
+
+
+> [!prop]
+> Let $M$ be a smooth manifold, $S\subseteq M$ an immersed or embedded submanifold, $p\in S$. A vector $\vec{v}\in T_{p}M$ is in $T_{p}S$ if and only if there exists a smooth curve $\gamma:J\to M$ with $\gamma(J)\subseteq S$, $\gamma$ is smooth as a map into $S$, and $\gamma(0)=p,\gamma'(0)=\vec{v}$.
+
+If $S\subseteq M$ is embedded, we also have the following:
+
+> [!prop] :
+> Let $M$ be a smooth manifold, $S\subseteq M$ an embedded submanifold $p\in S$. Then
+> $$
+> T_{p}S = \{\vec{v}\in T_{p}M: \vec{v}(f)=0\quad \forall f\in C^{\infty}(M), f\lvert_{S}\equiv 0\}.
+> $$
+
+
+> [!def] Defining Map for Embedded Submanifold
+> If an embedded submanifold $S\subseteq M$ is a regular level set of a smooth map $\Phi:M\to N$, then $\Phi$ is called the **defining map for $S$**. (If $N=\mathbb{R}^{k}$, then $\Phi$ is called a **defining function** for $S$). If $U\subset M$ is open and $S\cap U$ is a level set of $\Phi:U\to N$, then $\Phi$ is a **local defining map** for $S$.
+
+
+> [!prop] :
+> Let $M$ be a smooth manifold, $S\subseteq M$ an embedded submanifold. If $\Phi:U\to N$ is any local defining map for $S$, then for each point $p\in S\cap U$,
+> $$
+> T_{p}S = \ker d\Phi_{p}.
+> $$
+
+
+> [!example] :
+> Let $M=\mathbb{R}^{2}$ and $S=\{(x,0):x\in \mathbb{R}\}$. Then we have $\Phi(x,y)=y$ where $S=\Phi^{-1}(0)$.
+
+
+> [!proof]
+> Recall that $T_{p}S$ is identified with $d\iota_{p}(T_{p}S)\subseteq T_{p}M$. By hypothesis, $\Phi\circ \iota:S\to N$ is a constant map. So $d\Phi_{p}\circ d\iota_{p}$ is the zero map. But since $S$ is a **regular** level set of $\Phi$, $d\Phi_{p}$ is surjective. So by the rank-nullity theorem, $\dim(\ker d\Phi_{p})=\dim(T_{p}M)-\dim(T_{\Phi(p)}M)=\dim T_{p}S=\dim (Im(d\iota_{p}))$. Since $Im(d\iota_{p})\subseteq \ker d\Phi_{p}$ it follows that $T_{p}S=Im(d\iota_{p})=\ker d\Phi_{p}$.
+
+
+> [!Cor] :
+> If $N=\mathbb{R}^{k}$, $\Phi=(\Phi^{1},\ldots,\Phi^{k}):M\to \mathbb{R}^{k}$ is a smooth submersion, and $S\subseteq M$ is a lvel set of $\Phi$ then a vector $\vec{v}\in T_{p}M$ is in $T_{p}S$ iff $\vec{v}(\Phi^{1})=\cdots=\vec{v}(\Phi^{k})=0$.
+
+## Week 9 of Notes
+
+### Chapter 6: Sard's Theorem (A Glance)
+
+
+> [!thm] Sard's Theorem
+> Let $F:M\to N$ be a smooth map. Then the set of critical values of $F$ has measure zero in $N$.
+
+
+> [!cor] :
+> Let $F:M\to N$ be a smooth map. If $\dim M<\dim N$, then $F(M)$ has measure zero in $N$.
+
+
+> [!thm] Whitney Embedding Theorem
+> Every smooth $n$-dim manifold admits a proper embedding into $\mathbb{R}^{2n+1}$.
+
+
+> [!thm] Whitney Approximation Theorem for Functions
+> Let $M$ be a smooth manifold and $F:M\to \mathbb{R}^{k}$ a continuous function. Given any positive continuous function $\delta:M\to \mathbb{R}$, there exists a smooth function $\tilde{F}:M\to \mathbb{R}^{k}$ with the property that $|F(x)-\tilde{F}(x)|<\delta(x)$ for all $x\in M$. Moreover, if $F$ is smooth on a closed subset $A\subseteq M$, then $\tilde{F}$ can be chosen to agree with $F$ on $A$.
+
+#### Transversality
+The intersection of linear subspaces of a vector space is always another linear subspace. But the same is not true for submanifolds in general, unless we add the assumption of **transversality**.
+
+
+> [!def] Transversality
+> Let $M$ be a smooth manifold. Two embedded submanifolds $S,S'\subset M$ **intersect transversely** if $\forall p\in S\cap S'$, the tangent spaces $T_{p}S,T_{p}S'$ together span $T_{P}M$. More generally, if $F:N\to M$ is a smooth map and $S\subset M$ is an embedded submanifold, $F$ is **transverse to $S$** if $\forall x\in F^{-1}(S)$, the spaces $T_{F(x)}S$ and $dF_{x}(T_{x}N)$ together span $T_{F(x)}M$.
+
+Two embedded submanifold intersect transversely if and only if the inclusion map of either one is transverse to the other.
+
+
+> [!thm] Generalized Regular Level Set Theorem
+> Let $M,N$ be smooth manifolds with $S\subset M$ and embedded submanifold.
+> 1. If $F:N\to M$ is a smooth map that is transverse to $S$, then $F^{-1}(S)$ is an embedded submanifold of $N$ whose codimension in $N$ is equal to the codimension of $S$ in $M$.
+> 2. If $S'\subset M$ is an embedded submanifold of $M$ that intersects $S$ transversely, then $S\cap S'$ is an embedded submanifold of $M$ whose codimension in $M$ is the sum of the codimensions of $S$ and $S'$.
+
+> [!proof]
+> Note that 2. follows from 1. by taking $F$ to be the inclusion map of $S'$. Thus to prove 1., let $m=\dim M$, $k=\mathrm{codim}~S$ in $M$. Given $x\in F^{-1}(S)$, we can find a neighborhood $U$ of $F(x)$ in $M$ and a local defining function $\varphi:U\to \mathbb{R}^{k}$ for $S$, i.e., $S\cap U=\varphi^{-1}(0)$. It suffices to show that $0$ is a regular value for $\varphi\circ F$ because $F^{-1}(S)\cap F^{-1}(U)$ is the zero set of $\varphi\circ F$. So, given $\vec{z}\in T_{0}\mathbb{R}^{k}$ and $p\in (\varphi\circ F)^{-1}(0)$ the fact that $0$ is a regular value for $\varphi$ means there exists a vector $\vec{y}\in T_{F(p)}M$ such that $d\varphi_{F(p)}(\vec{y})=\vec{z}$. Since $F$ is transverse to $S$, we can write $\vec{y}=\vec{y}_{0}+dF_{p}(\vec{v})$ for some $\vec{y}_{0}\in T_{F(p)}S$ and $\vec{v}\in T_{p}N$. But $\varphi$ is constant on $S$, so $d\varphi_{F(p)}(\vec{y}_{0})=0$. So $d(\varphi\circ F)_{p}(\vec{v})=d\varphi_{F(p)}(dF_p(\vec{v}))=d\varphi_{F(p)}(\vec{y})=0$. Therefore, $d(\varphi\circ F)_{p}$ is surjective, so $0$ is a regular value of $\varphi\circ F$, as desired.
+
+
+> [!cor] :
+> Let $M,N$ be smooth manifolds, $S\subset M$ an embedded submanifold of codimension $k$, and $F:N\to M$ a submersion. Then $F^{-1}(S)$ is an embedded submanifold of $N$ of codimension $k$.
+
+### Chapter 7: Lie Groups
+
+> [!def] Lie Groups
+> A smooth manifold $G$ is called a **Lie group** if it has a group structure such that the multiplication and inverse maps
+> $$
+> m:G\times G\to G, i:G\to G
+> $$
+> are both smooth.
+>
+{ #def-Lie-group}
+
+
+
+> [!examples] Examples of Lie Groups
+> - $\mathbb{R}$ under addition
+> - $R^{*}$ under multiplication
+> - $S^{1}$ under complex multiplication
+
+The classic example of a Lie group is $GL(n,\mathbb{R})\subseteq M_{n\times n}(\mathbb{R})$ the group of invertible $n\times n$ matrices. *Almost* every finite-dimensional Lie group can be viewed as a subgroup of $GL(n,\mathbb{R})$.
+
+
+> [!def] Left and Right Translation Maps
+> Given a Lie group $G$ and any element $g\in G$, the **left and right translation maps** are:
+> $$
+> L_{g}:G\to G, R_{g}:G\to G
+> $$
+> where $L_{g}(h)=gh$ and $R_{g}(h)=hg$.
+>
+{ #def-left-and-right-translation-maps}
+
+
+Both $L_{g}$ and $R_{g}$ are smooth as have $\iota_{g}:G\to G\times G$ where $i_{g}(h)=(g,h)$ which we then use multiplication on to get $L_{g}$.
+
+
+> [!def] Lie Group Homomorphism
+> Let $G,H$ be Lie groups, a **Lie group homomorphism** from $G$ to $H$ is a smooth map $f:G\to H$ that is also a [[Independent Learning/Math/Algebra/Abstract Algebra#^def-homomorphism\|group homomorphism]].
+>
+{ #def-Lie-group-homomorphism}
+
+
+
+> [!thm] :
+> Every [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-group-homomorphism\|Lie group homomorphism]] has constant rank.
+
+> [!proof]
+> Let $F:G\to H$ be a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-group-homomorphism\|Lie group homomorphism]]. Let $e,\tilde{e}$ denote the identity elements of $G,H$ respectively. Let $g_{0}\in G$ be arbitrary. Since $F$ is a homomorphism for any $g\in G$, we have that $F(L_{g_{0}}(g))=L_{f(g_{0})}(f(g))$ thus $F\circ L_{g_{0}}=L_{F(g_{0})}\circ F$. Taking differentials at $e\in G$,
+> $$
+> dF_{g_{0}}\circ (dL_{g_{0}})_{e}=d(L_{F(g_{0})})_{\tilde{e}}\circ dF_{e}
+> $$
+> Since the maps $L_{g_{0}}:G\to G$ and $L_{F(g_{0})}:H\to H$ are diffeomorphisms we have that $(dL_{g_{0}})_{e}$ and $d(L_{F(g_{0})})_{\tilde{e}}$ are isomorphisms. Therefore, $\mathrm{rank}(dF_{g_{0}})=\mathrm{rank}(dF_{e})$.
+
+
+> [!def] Lie subgroups
+> Let $G$ be a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-group\|Lie group]]. A **Lie subgroup** of $G$ is a subgroup of $G$ of $G$, endowed with a topology and smooth structure making it into a Lie group and an *immersed* submanifold of $G$.
+>
+{ #def-Lie-subgroup}
+
+
+
+> [!prop] :
+> Let $G$ be a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-group\|Lie group]] and $H\subset G$ a subgroup that is also an *embedded* submanifold. Then $H$ is a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-subgroup\|Lie subgroup]].
+
+#### Facts about *open* Lie subgroups
+For example, consider $GL^{+}(n,\mathbb{R})\subseteq GL(n,\mathbb{R})$ where $GL^{+}(n,\mathbb{R})$ is the set of invertible matrices with positive determinate. 
+- If $H\subseteq G$ is an open subgroup, then $H$ is an embedded [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-subgroup\|Lie subgroup]]. Moreover, $H$ is actually *closed*, so $H$ is a union of connected components of $G$. Consider $GL^{+}(n,\mathbb{R})$.
+- If $W\subset G$ is any neighborhood of $e\in G$ then $W$ generates an open subgroup of $G$. If $W$ is connected, then it generates a connected subgroup of $G$, i.e. it generates the whole connected component containing $e$.
+- The connected component of $G$ containing $e$ is called the **identity component** and usually denoted by $G_{0}$ of $G$. $G_{0}$ is a normal subgroup of $G$ and is the only connected open subgroup of $G$. Every connected component of $G$ is diffeomorphic to $G_{0}$.
+
+#### More General Lie Subgroup Facts
+Let $F:G\to H$ be a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-group-homomorphism\|Lie group homomorphism]]
+- $\ker F$ is a properly embedded [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-subgroup\|Lie subgroup]] of $G$ with codimension equal to the rank of $F$.
+- If $F$ is injective, its image has a unique smooth manifold structure such that $F(G)$ is a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-subgroup\|Lie subgroup]] of $H$ and $F:G\to F(G)$ is a Lie group isomorphism.
+
+
+> [!example]
+> - $GL(n,\mathbb{R})^{+}\subset GL(n,\mathbb{R})$ is an open connected subgroup.
+> - The **special linear group** $SL(n,\mathbb{R})=\{A\in M_{n\times n}(\mathbb{R}):\det(A)=1\}$. Since $SL(n,\mathbb{R})=\ker(\det:GL(n,\mathbb{R})\to \mathbb{R}^{*})$ it's a properly embedded [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-subgroup\|Lie subgroup]] of $GL(n,\mathbb{R})$ of codimension $1$
+> - The **orthogonal group** $O(n,\mathbb{R})=\{A\in M_{n\times n}(\mathbb{R}):AA^{T}=I\}$. Any matrix $A\in O(n,\mathbb{R})$ must have $\det(A)=\pm 1$ so $O(n,\mathbb{R})\subseteq GL(n,\mathbb{R})$. Further consider the map $\Phi:GL(n,\mathbb{R})\to M_{n\times n}(\mathbb{R})$ by $\Phi(A)=A^{T}A$ has constant rank $\frac{n(n+1)}{2}$. So $\Phi^{-1}(I)$ is a smooth submanifold of $GL(n,\mathbb{R})$ of codimension $\frac{n(n+1)}{2}$. It's also a subgroup, so its a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-Lie-subgroup\|Lie subgroup]]. $O(n,\mathbb{R})$ is closed and bounded, so it's compact.
+> - **Special orthogonal group**: $SO(n,\mathbb{R})=O(n,\mathbb{R})\cap SL(n,\mathbb{R})$. $SO(n,\mathbb{R})$ is an open subgroup of $O(n,\mathbb{R})$ and its the identity of $O(n,\mathbb{R})$.
+>   - As an aside, $O(n,\mathbb{R})$ are rotations and reflections, while $SO(2,\mathbb{R})$ are just rotations.
+
+### Chapter 8: Vector Fields
+
+> [!def] Vector Field
+> Let $M$ be a smooth manifold. A **vector field** on $M$ is a section of $\pi:TM\to M$, i.e. a continuous map $X:M\to TM$, often written $p\mapsto x_{p}$ such that $x_{p}\in T_{p}M$ for all $p\in M$. $X$ is **smooth** if it's smooth as a map from $M$ to $TM$. Any map $X:M\to TM$, continuous or not, with $X(p)\in T_{p}M$, is called a **rough vector field** on $M$.
+>
+{ #def-vector-field}
+
+
+Let $(U,(x^{i}))$ be any chart on $M$. Given a [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-vector-field\|vector field]] $X$ on $M$, then there exists functions $x^{1},\ldots,x^{n}:M\to \mathbb{R}$ such that $x_{p}=x^{i}(p) \frac{\partial }{\partial x^{i}}\lvert_{p}$ called the **component functions** of $X$ on the chart.
+
+
+> [!prop] Smoothness Criterion
+> A [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-vector-field\|vector field]] $X$ on $M$ is smooth if and only if its component functions with respect to any smooth chart on $M$ are smooth.
+
+
+> [!proof]
+> Write $X:M\to TM$ in terms of a chart $(U,\varphi)$ on $M$ and the natural chart corresponding to this $(TU,\tilde{\varphi})$ on $TM$.
+
+
+> [!example] Examples of Vector Fields
+> 1. **Coordinate vector fields**: If $(U,(x^{i}))$ is a smooth chart on $M$, then the map $p\mapsto \frac{\partial }{\partial x^{i}}\lvert_{p}$ determines a vector field on $U\subset M$ called the **i-th coordinate vector field** on $U$.
+> 2. Angle coordinate vector field on $S^{1}$: Let $\theta$ be any angle coordinate chart on an open subset $U\subset S^{1}$, and let $\frac{\partial }{\partial \theta}$ be the coordinate vector field on $U$. Since any other angle coordinate $\tilde{\theta}$ on an open subset $\tilde{U}$ satisfies $\tilde{\theta}=\theta+2n\pi$ for some $n\in \mathbb{Z}$. This implies that $\frac{\partial }{\partial \tilde{\theta}}=\frac{\partial }{\partial \theta}$. So there is a *globally* defined coordinate vector field $\frac{\partial }{\partial \theta}$ on $S^{1}$, even though there's no global angle coordinate $\theta$ on $S^{1}$.
+
+
+> [!lemma] Extension Lemma:
+> Let $M$ be a smooth manifold, $A\subseteq M$ a closed subset, $X:A\to TM$ be a smooth vector field on $A$. 
+
+
+> [!proof]
+> Exercise
+
+
+> [!info] Notation
+> $\chi(M)$ denotes the set of all smooth vector fields on $M$. $\chi(M)$ is a vector space under pointwise addition and scalar multiplication. It is in fact a **module** over $C^{\infty}(M)$, i.e., if $X\in \chi(M)$ and $f\in C^{\infty}(M)$, then $(fX)_{p}=f(p)X_{p}$.
+
+#### Local and Global Frames
+Coordinate [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-vector-field\|vector fields]] in a smooth chart are nice: they provide a basis for vector fields on the chart domain. Any $X\in \chi(U)$ has a unique representation $X=X^{i} \frac{\partial }{\partial x^{i}}$ where $X^{i}\in C^{\infty}(M)$.
+
+
+> [!def] Linearly Independent Vector Fields
+> Let $M$ be smooth manifold. $A$ $k$-tuple $(X_{1},\ldots,X_{k})$ of vector fields on a subset $A\subseteq M$ is **linearly independent** if for every point $p\in A$ the vectors $(X_{1}\lvert_{p},\ldots,X_{k}\lvert_{p})$ are linearly independent in $T_{p}M$. Similarly,vector fields $(X_{1},\ldots,X_{k})$ **span $TM$ on $A$** if for all $p\in A$, $((X_{1})\lvert_{p},\ldots,(X_{n})\lvert_{p})$ span $T_{p}M$.
+
+
+> [!def] Local Frame Field
+> A **local frame field** for $M$ is an ordered $n$-tuple of [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-vector-field\|vector fields]] $(E_{1},\ldots,E_{n})$ on an open subset $U\subseteq M$ such that for all $p\in U$, $((E_{1})_{p},\ldots,(E_{n})_{p})$ form a **basis** for $T_{p}M$.
+>
+{ #def-local-frame-field}
+
+
+
+> [!def] Global Frame Field
+> A [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-local-frame-field\|local frame field]] is a **global frame field** if $U=M$, and a **smooth frame field**, if $E_{1},\ldots,E_{n}$ are smooth vector fields.
+>
+{ #def-global-frame-field}
+
+
+
+> [!prop] Completion of [[Independent Learning/Math/Topology and Geometry/Differential Geometry/Differential Geometry#^def-local-frame-field\|Local Frames]]
+> Let $M$ be a smooth manifold:
+> 1. If $(X_{1},\ldots,X_{k})$ $(1\le k\le n)$ is a linearly independent $k$-tuple of smooth vector fields on an open set $U\subseteq M$, then for every point $p\in U$ there exists smooth vector fields $X_{k+1},\ldots,X_{n}$ on a neighborhood $V$ of $p$ such that $(X_{1},\ldots,X_{n})$ is a smooth local frame field on $V\cap U$.
+> 2. If $(\vec{v}_{1},\ldots,\vec{v}_{k})$ in $T_{p}M$ are linearly independent then there exists a smooth local frame field $(X_{1},\ldots,X_{n})$ on some neighborhood of $p$ such that $(X_{i})_{p}=\vec{v}_{i}$ for $1\le i \le k$.
+
+For subsets (and submanifolds) $A\subseteq \mathbb{R}^{n}$ it's often useful for geometric problems to work with **orthonormal** frame fields, i.e., frame fields $(E_{1},\ldots,E_{n})$ such that for all $p\in A$ we have that $((E_{1})_{p},\ldots(E_{n})_{p})$ form an orthonormal basis for $T_{p}\mathbb{R}^{n}$.
+
+> [!example]
+> On $\mathbb{R}\setminus \{0\}$ define
+> $$
+ \begin{align}
+> E_{1}&= \frac{1}{\sqrt{x^{2}+y^{2}}} \left(x \frac{\partial }{\partial x}+y \frac{\partial }{\partial y} \right), \\
+> E_{2}&= \frac{1}{\sqrt{x^{2}+y^{2}}} \left(-y \frac{\partial }{\partial x}+x \frac{\partial }{\partial y} \right)
+ \end{align}
+> $$
+
+
+> [!lemma] Gram-Schmidt for Frame Fields
+> Suppose $(X_{1},\ldots,X_{n})$ is any smooth local frame field on an open set $U\subseteq \mathbb{R}^{n}$. Then there exists a smooth orthonormal frame field $(E_{1},\ldots,E_{n})$ on $U$ such that for $j=1,\ldots,n$ $\mathrm{span}((E_{1})_{p},\ldots,(E_{n})_{p})=\mathrm{span}((X_{1})_{p},\ldots,(X_{n})_{p})$
+
