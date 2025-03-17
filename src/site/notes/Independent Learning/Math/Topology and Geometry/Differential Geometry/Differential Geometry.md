@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/differential-geometry/differential-geometry/","created":"2025-01-13T20:01:10.631-07:00","updated":"2025-03-17T07:24:16.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/differential-geometry/differential-geometry/","created":"2025-01-13T20:01:10.631-07:00","updated":"2025-03-17T09:14:24.705-06:00"}
 ---
 
 # Overview
@@ -203,7 +203,7 @@ dF_{p} \left(\frac{\partial }{\partial x^{i}}\lvert_{p} \right)(f)=\frac{\partia
 $$
 So the matrix of $dF_{p}$ with respect to the coordinate bases is the Jacobian matrix. So in this case, $dF_{p}:T_{p}\mathbb{R}^{n}\to T_{F(p)}\mathbb{R}^{m}$ corresponds exactly to the [[Independent Learning/Math/Analysis/Real Analysis#^def-total-derivative\|total derivative]] via the canonical isomorphisms $T_{p}\mathbb{R}^{n}\cong \mathbb{R}^{n}$ and $T_{F(p)}\mathbb{R}^{m}\cong \mathbb{R}^{m}$.
 
-Now let $F:M\to N$ be a smooth map between smooth manifolds. Let $p\in M$ and choose charts $(U,\varphi)$ on $M$ and $(V,\psi)$ on $N$ with $p\in U$, $F(p)\in V$. Let $\hat{p}=\varphi(p)\in \mathbb{R}^{n}$, $\hat{F}:\psi \circ F \circ \varphi^{-1}$. From the previous case, we know that $d \hat{F}_{\hat{p}}:T_{\hat{p}}\mathbb{R}^{n}\to T_{\hat{F}(\hat{p})}\mathbb{R}^{n}$ is represented by the Jacobian matrix of $\hat{F}$ with respect to the standard basis $\frac{\partial }{\partial x^{i}}\lvert_{\hat{p}}$ for $T_{\hat{p}}\mathbb{R}^{m}$ and $\frac{\partial }{\partial y^{i}}\lvert_{{\hat{F}(\hat{p})}}$ for $T_{\hat{F}(\hat{p})}\mathbb{R}^{m}$. Since $F \circ \varphi^{-1}=\psi^{-1}\circ \hat{F}$ we have 
+Now let $F:M\to N$ be a smooth map between smooth manifolds. Let $p\in M$ and choose charts $(U,\varphi)$ on $M$ and $(V,\psi)$ on $N$ with $p\in U$, $F(p)\in V$. Let $\hat{p}=\varphi(p)\in \mathbb{R}^{n}$, $\hat{F}:\psi \circ F \circ \varphi^{-1}$. From the previous case, we know that $d \hat{F}_{\hat{p}}:T_{\hat{p}}\mathbb{R}^{n}\to T_{\hat{F}(\hat{p})}\mathbb{R}^{n}$ is represented by the Jacobian matrix of $\hat{F}$ with respect to the standard basis $\frac{\partial }{\partial x^{i}}\lvert_{\hat{p}}$ for $T_{\hat{p}}\mathbb{R}^{m}$ and $\frac{\partial }{\partial y^{i}}\lvert_{\hat{F}(\hat{p})}$ for $T_{\hat{F}(\hat{p})}\mathbb{R}^{m}$. Since $F \circ \varphi^{-1}=\psi^{-1}\circ \hat{F}$ we have 
 $$
 dF_{p} \left( \frac{\partial }{\partial x^{i}}\Bigg\lvert_{p} \right)=dF_{p} \left( d(\varphi^{-1})_{\hat{p}} \left( \frac{\partial  }{\partial x^{i}} \right)\Bigg\lvert_{\hat{p}} \right) = d(\psi^{-1})_{\hat{F}(\hat{p})}\left( d\hat{F}_{\hat{p}} \left( \frac{\partial }{\partial x^{i}} \Bigg\lvert_{\hat{p}} \right) \right) = d(\psi^{-1})_{\hat{F}(\hat{p})} \left( \frac{\partial \hat{F}^{j}}{\partial x^{i}}(p) \frac{\partial }{\partial y^{j}} \Bigg\lvert_{\hat{F}(\hat{p})} \right) = \frac{\partial \hat{F}^{j}}{\partial x^{i}}(p) d(\psi^{-1})_{\hat{F}(\hat{p})} \left( \frac{\partial }{\partial y^{j}} \Bigg\lvert_{\hat{F}(\hat{p})} \right)= \frac{\partial \hat{F}^{j}}{\partial x^{i}}(p) \frac{\partial }{\partial y^{j}}\Bigg\lvert_{F(p)}
 $$
