@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/algebra/lie-algebras/","created":"2025-01-13T20:01:02.267-07:00","updated":"2025-03-14T20:49:26.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/algebra/lie-algebras/","created":"2025-01-13T20:01:02.267-07:00","updated":"2025-03-17T13:31:43.313-06:00"}
 ---
 
 # Overview
@@ -503,4 +503,61 @@ Let $\mathfrak{g}=\mathfrak{sl}(2,\mathbb{F})$ and $V=\mathbb{F}^{2}$ over $\mat
 > C_{\phi}:V\to V \quad C_{\phi}(\phi(x)v)=\phi(x)C_{\phi}(v).
 > $$
 > Also, note that $C_{\phi}(W)\subset W$ as $C_{\phi}$ is a $\mathfrak{g}$-module homomorphism and $W$ is a $\mathfrak{g}$-module. Further, $\ker C_{\phi}\subset V$ is a $\mathfrak{g}$-submodule. Therefore, $\mathfrak{g}$ acts trivially on $V / W \cong \mathbb{F}$ as $\mathfrak{g}$-modules and $\phi(\mathfrak{g}).V\subset W$. Thus, $C_{\phi}$ has trace 0 on $V / W$ and $C_{\phi}=\lambda \mathrm{Id}_{W}$ on $W$ by Schur's lemma for $\lambda \in \mathbb{F}$. But $\lambda \neq 0$ as $\mathrm{Tr}\left[ C_{\phi} \right]=\dim \mathfrak{g}$ ($\lambda = \dim \mathfrak{g} / \dim W$). Therefore, $\ker C_{\phi}$ is a 1-dimensional $\mathfrak{g}$-submodule. Thus, $V = W\oplus\ker C_{\phi}$. This finishes the proof in the case that $V$ has a codimension $1$-submodule.
-> 2.  
+> 2.  Now for the general case. Let $W$ be a proper non-zero submodule of $V$. We have the following short exact sequence
+> $$
+> 0 \to W \to V \to V / W \to 0
+> $$
+> Let $\mathrm{Hom}_{\mathbb{F}}(V,W)=\{f:V\to W, \mathbb{F}\mathrm{-linear}\}$. Then
+> $$
+> \Lambda_{W} = \{f\in \mathrm{Hom}(V,W):f\lvert_{W}=\lambda \mathrm{id}_{W}\}.
+> $$
+> Claim: $\mathfrak{g}.\Lambda_{W}\subseteq \Lambda_{W}$ (i.e. $\Lambda_{W}$ is a $\mathfrak{g}$-submodule of $\mathrm{Hom}_{\mathbb{F}}(V,W)$). To see this claim, we have defined the action for $x\in \mathfrak{g}$, $(x.f)\lvert_{W}=x.(f(w))-f(x.w)=x.(\lambda w)-\lambda(x.w)=0$. Thus, $xf\lvert_{W}=0 \mathrm{Id}_{W}$. Thus $x.f\in \Lambda_{W}$. Now define $\chi_{W}=\{f\in \Lambda_{W}:f\lvert_{W}=0\mathrm{Id}_{W}\}$. Then $\chi_{W}\subset \Lambda_{W}\subset \mathrm{Hom}_{\mathbb{F}}(V,W)$. Now $\Lambda_{W} / \chi_{W} \cong \mathbb{F}$ as both vector spaces *and* as $\mathfrak{g}$-modules (since $\mathfrak{g}.\Lambda_{W}\subset \chi_{W}$). This yields a short and exact sequence of $\mathfrak{g}$-modules
+> $$
+> 0\to \chi_{W}\to \Lambda_{W}\to \mathbb{F}\to 0
+> $$
+> which falls under case 1. proven earlier. Therefore, $\Lambda_{W}$ has a $n$-dimensional $\mathfrak{g}$-module $Y_{W}\subset \Lambda_{W}$ such that $\Lambda_{W}=\chi_{W}\oplus Y_{W}$. Let $f_{y}:V\to W$ be such that $\langle f_{y}\rangle = Y_{W}$. Claim: We can assume $f_{y}\lvert_{W}=1 \mathrm{Id}_{W}$. We showed in 1. that $\mathfrak{g}.Y_{W}=0$. Thus, $0=(x.f_{y})(v)=x.(f_{y}(v))-f_{y}(x.v)$ for all $x\in \mathfrak{g},v\in V$. Therefore, $f_{y}\in \mathrm{Hom}_{\mathfrak{g}}(V,W)$. Further, $\ker f_{y}$ is a $\mathfrak{g}$-submodule of $V$. With $f_{y}(v)\subset W$ and $f_{y}\lvert_{W}=\mathrm{Id}_{W}$ it follows that $V=W\oplus \ker f_{y}$ as desired and concluding the proof.
+
+## Week 10
+### Representations of $\mathfrak{sl}(2,\mathbb{F})$ for $char(\mathbb{F})=0$, $\mathbb{F}=\overline{\mathbb{F}}$
+
+Let $V$ be *finite-dimensional* $\mathfrak{sl}(2,\mathbb{F})$ module. With representation $\phi:\mathrm{sl}(2,\mathbb{F})\to\mathfrak{gl}(V)$
+$$
+e = \begin{bmatrix}
+0 & 1 \\ 0 & 0
+\end{bmatrix}, \quad h = \begin{bmatrix}
+1 & 0 \\ 0 & -1
+\end{bmatrix}, \quad f = \begin{bmatrix}
+0 & 0 \\ 1 & 0
+\end{bmatrix}
+$$
+where $[h,e]=2e, [h,f]=-2f,[e,f]=h$. $h$ semisimple implies that $\phi(h)$ is semisimple in $\mathrm{End}(V)$ by preservation of Jordan-Chevalley decomposition. This implies that $h$ *acts* diagonally on $V$:
+$$
+V = \bigoplus_{\lambda\in \mathrm{spec}(h)}V_{\lambda}
+$$$V_{\lambda}=\{v\in V:h.v=\lambda v\}$ for $\lambda\in \mathbb{F}$. (Note: $\mathrm{spec}(h)$ denotes the spectrum of $h$).
+
+
+> [!def] Weights
+> $\lambda\in \mathbb{F}$ is a called a **weight of $h$ in $V$** if $V_{\lambda}\neq0$ for $h\in \mathfrak{g}$ and $V$ a $\mathfrak{g}$-module. If $\lambda$ is a weight, we say that $V_{\lambda}=\{v\in V:h.v=\lambda v\}$ is a weight space of $V$.
+>
+{ #def-weights}
+
+
+
+> [!lemma] :
+> If $v\in V_{\lambda}$ then $e.v\in V_{\lambda}$ and $f.v\in V_{\lambda}\in V_{\lambda-2}$.
+
+> [!proof]
+> We want to show that $h.(e.v)=(\lambda+2)e.v$. This is seen through
+> $$
+> h.e.v = e.h.v + [h,e].v = e\lambda v + 2e v = (\lambda+2)e.v
+> $$
+
+The lemma reimples that $\phi(e),\phi(f)$ are nilpotent endomorphisms in $\mathfrak{gl}(V)$. Since $\dim_{\mathbb{F}}V<\infty$:
+$$
+V = \bigoplus_{\lambda\in \mathbb{F}}V_{\lambda}
+$$
+there must exists $\mu\in \mathbb{F}$ such that $V_{\mu}\neq 0, V_{\mu+2}=0$.
+
+
+> [!def] Maximal Weight Vectors
+> Any non-zero vector $v_{\mu}\in V_{\mu}$ such that $ev_{\mu}=0$ is called a **maximal weight vector of weight $\mu$**.
