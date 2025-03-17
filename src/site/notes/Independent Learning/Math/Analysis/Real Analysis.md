@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/analysis/real-analysis/","created":"2025-01-10T20:42:58.644-07:00","updated":"2025-03-14T20:49:05.167-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/analysis/real-analysis/","created":"2024-12-24T19:32:37.912-07:00","updated":"2025-03-14T20:49:05.000-06:00"}
 ---
 
 # Overview

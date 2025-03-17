@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/qit/quantum-learning-theory/classical-shadows/","created":"2025-01-10T20:43:08.796-07:00","updated":"2025-03-14T21:43:29.846-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/qit/quantum-learning-theory/classical-shadows/","created":"2024-12-31T17:53:37.484-07:00","updated":"2025-03-14T21:43:29.000-06:00"}
 ---
 
 Foundational paper by Haung, Keung, and Preskill[@huang_predicting_2020-1] that allows for the efficient estimation of many observables (typically that only need a single copy) of a quantum state. 

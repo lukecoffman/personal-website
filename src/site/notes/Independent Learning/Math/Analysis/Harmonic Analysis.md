@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/analysis/harmonic-analysis/","created":"2025-01-10T20:43:08.727-07:00","updated":"2025-03-14T20:49:09.078-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/analysis/harmonic-analysis/","created":"2024-12-25T11:49:33.675-07:00","updated":"2025-03-14T20:49:09.000-06:00"}
 ---
 
 # Overview

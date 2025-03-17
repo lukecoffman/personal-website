@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/learning-launcher-steering/","created":"2025-01-10T20:43:09.426-07:00","updated":"2025-03-14T20:45:33.888-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/learning-launcher-steering/","created":"2025-01-01T12:39:46.757-07:00","updated":"2025-03-17T07:21:34.000-06:00"}
 ---
 
 ## Books worth reading
@@ -20,6 +20,8 @@ Good undergrad into QC text:
 Good Highschool into QC text: QSYS IQC Primer
 - https://uwaterloo.ca/institute-for-quantum-computing/sites/default/files/uploads/files/mathematics_qm_v23_qsys.pdf
 
+Another great list of resources:
+- https://artofproblemsolving.com/wiki/index.php?title=Mathematics_books&srsltid=AfmBOoqLITtRr4MFADlFQj8XSC44Pfq6EoxNNU_Hsmm2JtzWTncE46f8
 ## Todo List of Topics
 
 ### Boolean Functional Analysis

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/qit/quantum-information-geometry/introduction-to-quantum-information-geometry/","created":"2025-02-04T08:27:56.718-07:00","updated":"2025-03-14T20:48:48.550-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/qit/quantum-information-geometry/introduction-to-quantum-information-geometry/","created":"2025-02-03T13:54:50.012-07:00","updated":"2025-03-14T20:48:48.000-06:00"}
 ---
 
 # Overview

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/analysis/functional-analysis/","created":"2025-01-10T20:42:58.627-07:00","updated":"2025-03-14T20:49:14.823-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/analysis/functional-analysis/","created":"2024-12-24T17:22:10.441-07:00","updated":"2025-03-14T20:49:14.000-06:00"}
 ---
 
 # Overview

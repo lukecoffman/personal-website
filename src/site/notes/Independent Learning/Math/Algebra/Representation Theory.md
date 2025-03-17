@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/algebra/representation-theory/","created":"2025-01-10T20:43:08.711-07:00","updated":"2025-03-14T20:49:18.850-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/algebra/representation-theory/","created":"2024-12-24T22:06:19.706-07:00","updated":"2025-03-14T20:49:18.000-06:00"}
 ---
 
 # Overview

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/qit/introduction-to-quantum-information-theory/","created":"2025-03-14T19:49:35.777-06:00","updated":"2025-03-17T06:39:13.049-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/qit/introduction-to-quantum-information-theory/","created":"2025-03-16T16:54:12.445-06:00","updated":"2025-03-17T06:39:13.000-06:00"}
 ---
 
 # Overview

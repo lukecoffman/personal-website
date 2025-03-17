@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/information-and-coding-theory/introduction-to-classical-information-theory/","created":"2025-02-04T08:27:56.742-07:00","updated":"2025-03-14T20:17:41.801-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/information-and-coding-theory/introduction-to-classical-information-theory/","created":"2025-02-03T14:07:28.733-07:00","updated":"2025-03-14T20:17:41.000-06:00"}
 ---
 
 # Overview

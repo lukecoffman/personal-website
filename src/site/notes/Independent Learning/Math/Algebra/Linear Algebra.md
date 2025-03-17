@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/algebra/linear-algebra/","created":"2025-01-10T20:42:58.605-07:00","updated":"2025-03-14T20:49:22.361-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/algebra/linear-algebra/","created":"2024-12-24T18:00:26.115-07:00","updated":"2025-03-14T20:49:22.000-06:00"}
 ---
 
 # Overview

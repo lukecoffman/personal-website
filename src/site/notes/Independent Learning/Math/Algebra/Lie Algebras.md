@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/algebra/lie-algebras/","created":"2025-01-15T18:11:38.265-07:00","updated":"2025-03-14T20:49:26.934-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/algebra/lie-algebras/","created":"2025-01-13T20:01:02.267-07:00","updated":"2025-03-14T20:49:26.000-06:00"}
 ---
 
 # Overview
