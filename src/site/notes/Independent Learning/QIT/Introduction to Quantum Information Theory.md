@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/qit/introduction-to-quantum-information-theory/","created":"2025-03-16T16:54:12.445-06:00","updated":"2025-03-17T06:39:13.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/qit/introduction-to-quantum-information-theory/","created":"2025-03-16T16:54:12.445-06:00","updated":"2025-03-17T09:40:46.741-06:00"}
 ---
 
 # Overview
@@ -45,3 +45,5 @@
 - Weird properties of entanglement
 - Density matrices by proposing the problem of maximally mixed states
 
+# Non-Local Games
+- Bell's inequality
