@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/information-and-coding-theory/introduction-to-classical-information-theory/","created":"2025-02-03T14:07:28.733-07:00","updated":"2025-03-14T20:17:41.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/information-and-coding-theory/introduction-to-classical-information-theory/","created":"2025-02-04T08:27:56.742-07:00","updated":"2025-04-19T15:54:17.092-06:00"}
 ---
 
 # Overview
@@ -51,7 +51,7 @@ H(X) = -\sum_{x\in \mathcal{X}}^{}p(x)\log p(x).
 Entropy is the fundamental quantity of interest in information theory as it quantifies the *information content* of a random variable. Notice that entropy is the *expected surprisal* from a random variable $X$ i.e. $\mathbb{E}_{X\sim p(x)}[s(X)]=H(X)$. Since $0\le p(x) \le 1$ it follows that $-\log p(x)\ge 0$ such that $H(X)\geq 0$.
 
 > [!info] Remark
-> Its worth noticing that the definition of [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-entropy\|entropy]] captures the first moment of the [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-surprisal\|surprisal]] random variable or $s(X)=-\log p(X)$. Thus, we could think about *information fluctuations* by looking at $\mathrm{Var}[s(X)]$ or higher order moments / cumulants. It could be interesting to use these ideas to study the [[Independent Learning/Classical Probability/Introduction to Moment Generating Function or Characteristic Function#^def-characteristic-function-moment-generating-function\|moment generating function]] or something similar of $s(X)$. (Some way to think about information decompositions is interesting).
+> Its worth noticing that the definition of [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-entropy\|entropy]] captures the first moment of the [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-surprisal\|surprisal]] random variable or $s(X)=-\log p(X)$. Thus, we could think about *information fluctuations* by looking at $\mathrm{Var}[s(X)]$ or higher order moments / cumulants. It could be interesting to use these ideas to study the [[Independent Learning/Classical Probability/Moments, Cumulants, Wick's Theorem, and the Central Limit Theorem#^def-characteristic-function-moment-generating-function\|moment generating function]] or something similar of $s(X)$. (Some way to think about information decompositions is interesting).
 
 > [!def] Joint Entropy
 > The **joint entropy** of a pair of discrete random variables $(X,Y)$ with joint distribution $p(x,y)$ is defined as
@@ -111,3 +111,81 @@ I(X;Y) = D(p(x,y)||p(x)p(y)) = \sum_{x\in \mathcal{X} , y\in \mathcal{Y}}^{} p(x
 
 Observe that $I(X;Y) = H(Y)-H(Y|X)=H(X)-H(X|Y)=H(X)+H(Y)-H(X,Y)$
 
+
+# Data Compression
+
+
+> [!def] Source Code
+> A **source code** $C$ for a random variable $X$ is a mapping from $\mathcal{X}$, the range of $X$, to $\mathcal{D}^{*}$, the set of finite-length strings of symbols from the $D$-ary alphabet. Let $C(x)$ denote the codeword corresponding to $x$ and let $l(x)$ denote the length of $C(x)$.
+>
+{ #def-source-code}
+
+
+
+> [!def] Expected Code Length
+> The **expected length** $L(C)$ of a [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-source-code\|source code]] $C(x)$ for a random variable $X$ with probability mass function $p(x)$ is given by
+> $$
+> L(C)=\sum_{x\in \mathcal{X}}^{} p(x)l(x),
+> $$
+> where $l(x)$ is the length of the codeword associated with $x$.
+>
+{ #def-expected-code-length}
+
+
+
+> [!def] Nonsingular Codes
+> A [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-source-code\|code]] is said to be **nonsingular** if every element of the range of $X$ maps into a different string in $\mathcal{D}^{*}$; that is,
+> $$
+> x\neq x' \implies C(x)\neq C(x').
+> $$
+>
+{ #def-nonsingular-codes}
+
+
+
+> [!def] Code Extension
+> The **extension** $C^{*}$ of a [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-source-code\|code]] $C$ is the mapping from finite-length strings of $\mathcal{X}$ to finite-length strings of $\mathcal{D}$, defined by
+> $$
+> C(x_{1}x_{2}\cdots x_{n})=C(x_{1})C(x_{2})\cdots C(x_{n}),
+> $$
+> where $C(x_{1})C(x_{2})\cdots C(x_{n})$ indicates concatenation of the corresponding codewords.
+>
+{ #def-code-extension}
+
+
+
+> [!def] Uniquely Decodable Codes
+> A [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-source-code\|code]] is called **uniquely decodable** if its [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-code-extension\|extension]] is [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-nonsingular-codes\|nonsingular]].
+>
+{ #def-uniquely-decodable-codes}
+
+
+
+> [!def] Prefix or Instantaneous Codes
+> A [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-source-code\|code]] is called a **prefix code** or **instantaneous code** if no codeword is a prefix of any other codeword.
+>
+{ #def-prefix-or-instantaneous-codes}
+
+
+> [!thm] Kraft Inequality
+> For any [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-prefix-or-instantaneous-codes\|instantaneous code]] over an alphabet of size $D$, the [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-source-code\|codeword lengths]] $l_{1},l_{2},\ldots,l_{m}$ must satisfy the inequality
+> $$
+> \sum_{i=1}^{m} D^{-l_{i}}\le 1.
+> $$
+> Conversely, given a set of codeword lengths that satisfy this inequality, there exists an instantaneous code with these word lengths.
+>
+{ #thm-kraft-inequality}
+
+
+> [!proof]
+> Recall that an [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-prefix-or-instantaneous-codes\|instantaneous code]] is a code such that no codeword is a prefix of any other codeword. Thus, if we have a codeword say $10$ then no other codeword can start with $10$ implying the next codeword must be of a form similar to $110$ for instance. To illustrate this concept, consider a $D$-ary tree in which each node has $D$ children. Let the branches of the tree represent the symbols of the codewords. For instance a $2$-ary tree for binary codes is depicted below:
+> ![[Kraft.svg#invert_dark]]
+> The $2$ different branches (or in general $D$ branches) from the root note represent the $2$ possible values of the first symbol of the codeword. Each codeword is represented by a leaf on the tree with symbols obtained by tracing from the root to the leaf. The prefix condition on the codewords implies no codeword is an ancestor of any other codeword on the tree. Hence, each codeword eliminates its descendants as possible codewords. So if $0$ is a codeword, no other codeword can start is $0$ and hence is eliminated from the tree.
+> 
+> Since we have a finite number of codewords, we only need to think about the tree until we reach the maximum length of a codeword $l_{\rm max}$. Some of the nodes at level $l_{\rm max}$ are codewords (since $l_{\rm max}$ itself corresponds to a codeword), some are the descents of codewords (since all shorter codewords must have already appeared in the tree), and some are neither (junk). We can actually find the number of descendants that a codeword has as a function of its length $l_{i}$. For the node corresponding to our codeword at level $l_{i}$ there are $l_{\rm max}-l_{i}$ levels left until we reach the maximum length $l_{\rm max}$. Each additional level generates $D$ more descents from a given node implying that a codeword at level $l_{i}$ has $D^{l_{\rm max}-l_{i}}$ descendants at level $l_{\rm max}$. Due to the prefix condition, each collection of descendants originating from a specific codeword are disjoint. Otherwise, we could trace a descendant to two (or more) codewords which implies that the codewords are descendants of each other violating the prefix condition. In addition to the sets of descendants being disjoint, we also have that the total number of nodes in these sets must be upper bounded by $D^{l_{\rm max}}$.  Hence, summing over all the codewords, we have
+> $$
+> \sum_{i=1}^{m}D^{l_{\rm max}-l_{i}} \le D^{l_{\rm max}} \implies \sum_{i=1}^{m} D^{l_{i}} \le 1
+> $$
+> which is the Kraft inequality. Conversely, given any set of codeword lengths $l_{1},\ldots,l_{m}$ that satisfy the Kraft inequality, we can always construct a tree like the one above. Label the first node of depth $l_{1}$ as codeword $1$, and remove its descendants from the tree. Then label the first remaining node of depth $l_{2}$ as codeword 2, and so on. Proceeding this way, we construct a prefix code with the specified $l_{1},\ldots,l_{m}$.
+
+Saturating the [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^thm-kraft-inequality\|Kraft inequality]] will mean we have an *optimal* [[Independent Learning/Information and Coding Theory/Introduction to Classical Information Theory#^def-prefix-or-instantaneous-codes\|prefix code]] as every node at level $l_{\rm max}$ will be the descendant of some codeword and changing the length of any codeword will cause overlap and violate the prefix condition.

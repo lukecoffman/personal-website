@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/information-and-coding-theory/introduction-to-coding-theory/","created":"2025-03-08T19:15:27.639-07:00","updated":"2025-03-14T20:49:34.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/information-and-coding-theory/introduction-to-coding-theory/","created":"2025-03-09T10:01:10.194-06:00","updated":"2025-03-14T20:49:34.412-06:00"}
 ---
 
 # Overview

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/topology/","created":"2024-12-24T16:50:05.568-07:00","updated":"2025-03-17T09:09:04.976-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/topology-and-geometry/topology/","created":"2025-01-10T20:42:58.669-07:00","updated":"2025-03-17T09:09:04.000-06:00"}
 ---
 
 # Overview

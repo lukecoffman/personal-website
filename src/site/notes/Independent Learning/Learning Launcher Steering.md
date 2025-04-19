@@ -1,24 +1,37 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/learning-launcher-steering/","created":"2025-01-01T12:39:46.757-07:00","updated":"2025-03-17T07:21:34.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/learning-launcher-steering/","created":"2025-01-10T20:43:09.426-07:00","updated":"2025-04-06T15:36:18.000-06:00"}
 ---
 
 ## Books worth reading
 [An Introduction to Computational Learning Theory by Kearns and Vazirani](https://direct.mit.edu/books/monograph/2604/An-Introduction-to-Computational-Learning-Theory)
 [Geometry of Quantum States by Bengtsson and Zyczkowski](https://www.cambridge.org/core/books/geometry-of-quantum-states/4BA9DCEED5BB16B222A917EAAAD17028)
 [Group Theory: Birdtracks, Lie's, and Exceptional Groups by Cvitanovic](https://birdtracks.eu/version9.0/GroupTheory.pdf) (diagrammatic group theory book)
+["Quantum Theory for Mathematicians" by Brian C. Hall](https://link.springer.com/book/10.1007/978-1-4614-7116-5)
+["Street-Fighting Mathematics" by Sanjoy Mahajan](https://mitpress.mit.edu/9780262514293/street-fighting-mathematics/)
+- Also ["Ryan O'Donnell's Street Fighting Mathematics"](https://www.youtube.com/watch?v=qP4XEZ54eSc&ab_channel=RyanO%27Donnell)
 
 
 ## Learning Resources
 For an introduction to Quantum Learning Theory see [John Wright's Lecture Notes](https://people.eecs.berkeley.edu/~jswright/quantumlearningtheory24/).
+For a classical learning theory text see ["Understanding Machine Learning" by Schwartz and David](https://www.cambridge.org/core/books/understanding-machine-learning/3059695661405D25673058E43C8BE2A6?pageNum=1&searchWithinIds=3059695661405D25673058E43C8BE2A6&productType=BOOK_PART&searchWithinIds=3059695661405D25673058E43C8BE2A6&productType=BOOK_PART&sort=mtdMetadata.bookPartMeta._mtdPositionSortable%3Aasc&pageSize=30&template=cambridge-core%2Fbook%2Fcontents%2Flistings&ignoreExclusions=true)
+For another TCS learning theory text see ["Statistical Learning Theory" by Hajek and Raginsky](https://maxim.ece.illinois.edu/teaching/SLT/SLT.pdf)
 For Schur-Weyl Duality see this thesis https://arxiv.org/pdf/quant-ph/0512255
+More Learning Theory notes: https://www.scottaaronson.com/barbados-2016.pdf
+For some broad discrete math and TCS ["The Probabilistic Method" by Alon and Spencer](https://math.bme.hu/~gabor/oktatas/SztoM/AlonSpencer.ProbMethod3ed.pdf)
+For some advanced probability methods useful to QI see ["High-Dimensional Probability" by Vershynin](https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102)
+
+Weingarten Calculus:
+- https://www.ams.org/notices/202205/rnoti-p734.pdf
+- https://arxiv.org/pdf/2101.00921
+- https://arxiv.org/pdf/math-ph/0402073
+- https://arxiv.org/pdf/math-ph/0205010
+
+
+Some nice looking error correction [notes](https://phfaist.com/d/lecturenotes/PhF_QECLectureNotes.pdf).
+
+["generatingfunctionology"](https://www2.math.upenn.edu/~wilf/DownldGF.html)
 
 Felix's list https://felixleditzky.info/selected_references.html
-
-Good undergrad into QC text:
-- https://www.jku.at/fileadmin/gruppen/180/2024_kueng_quantum_computing.pdf
-
-Good Highschool into QC text: QSYS IQC Primer
-- https://uwaterloo.ca/institute-for-quantum-computing/sites/default/files/uploads/files/mathematics_qm_v23_qsys.pdf
 
 Another great list of resources:
 - https://artofproblemsolving.com/wiki/index.php?title=Mathematics_books&srsltid=AfmBOoqLITtRr4MFADlFQj8XSC44Pfq6EoxNNU_Hsmm2JtzWTncE46f8

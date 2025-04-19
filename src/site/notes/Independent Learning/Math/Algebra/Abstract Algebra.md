@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/math/algebra/abstract-algebra/","created":"2024-12-24T17:10:33.523-07:00","updated":"2025-03-14T20:49:30.000-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/math/algebra/abstract-algebra/","created":"2025-01-10T20:42:58.590-07:00","updated":"2025-04-15T15:55:47.000-06:00"}
 ---
 
 # Overview
@@ -14,6 +14,8 @@
 > [!info] Recommended Readings and Resources
 > -  Undergraduate Introduction: ["Contemporary Abstract Algebra" by Gallian](https://books.google.com/books/about/Contemporary_Abstract_Algebra.html?id=JMUaCgAAQBAJ)
 > - Standard Reference: ["Abstract Algebra" by Dummit and Foote](https://books.google.com/books/about/Abstract_Algebra.html?id=KJDBQgAACAAJ)
+{ #f41867}
+
 
 > [!warning] Recommended / Assumed Prerequisite Topics
 > This note assumes working knowledge of the following topics:
@@ -101,6 +103,12 @@ a\cdot(b+c)&=(a\cdot b)+(a\cdot c)\\ \\
 
 
 >[!def] Module
+> Let $R$ be a [[Independent Learning/Math/Algebra/Abstract Algebra#^def-ring\|ring]] (not necessarily commutative nor with $1$, but often so). A **left $R$-module** or a **left module over $R$** is an [[Independent Learning/Math/Algebra/Abstract Algebra#^def-group\|abelian group]] $(M,+)$ and a left action of $R$ on $M$ (a map $R\times M\to M$) denoted $rm$ for $r\in R,m\in M$ that is bilinear, i.e.
+> 1. $(r+s)m=rm+sm$
+> 2. $(rs)m=r(sm)$
+> 3. $r(m+n)=rm+rn$
+> 4. $1m=m$ when $R$ has a unit.
+>^def-module
 
 # Advanced Concepts / Misc
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/qit/introduction-to-quantum-information-theory/","created":"2025-03-16T16:54:12.445-06:00","updated":"2025-03-17T09:40:46.741-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/qit/introduction-to-quantum-information-theory/","created":"2025-03-14T19:49:35.777-06:00","updated":"2025-04-12T22:10:54.829-06:00"}
 ---
 
 # Overview
@@ -26,6 +26,8 @@
 > - For a more advanced undergraduate text see ["An introduction to Quantum Computing" by Kaye, Laflamme, and Mosca](https://books.google.com/books/about/An_Introduction_to_Quantum_Computing.html?id=gLFQAAAAMAAJ)
 > - For the standard advanced undergraduate to graduate introduction see ["Quantum Computation and Quantum Information" by Nielsen and Chuang](https://www.cambridge.org/highereducation/books/quantum-computation-and-quantum-information/01E10196D0A682A6AEFFEA52D53BE9AE)
 > - For an advanced graduate introduction see [John Preskill's "Quantum Information and Quantum Computation" notes](https://www.lorentz.leidenuniv.nl/quantumcomputers/literature/preskill_1_to_6.pdf).
+> - For a mathematical emphasis on QIT see ["Quantum Information Theory: Mathematical Foundation" by Hiyashi](https://link.springer.com/book/10.1007/978-3-662-49725-8F) 
+> - For a quantum Shannon theory focused text see ["Quantum Information Theory" by Wilde](https://www.cambridge.org/core/books/quantum-information-theory/9DC2CA59F45636D4F0F30D971B677623)
 
 
 > [!warning] Recommended / Assumed Prerequisite Topics

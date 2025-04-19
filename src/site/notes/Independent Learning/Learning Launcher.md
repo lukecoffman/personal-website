@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/independent-learning/learning-launcher/","tags":["gardenEntry"],"created":"2025-01-01T12:39:46.757-07:00","updated":"2025-03-17T09:10:37.491-06:00"}
+{"dg-publish":true,"permalink":"/independent-learning/learning-launcher/","tags":["gardenEntry"],"created":"2025-03-14T19:33:15.718-06:00","updated":"2025-03-17T09:10:37.000-06:00"}
 ---
 
 # Learning Launcher
